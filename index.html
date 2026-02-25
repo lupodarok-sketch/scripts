@@ -1109,7 +1109,7 @@
                 <h1>ЛУЧШИЙ ПОДАРОК</h1>
             </div>
             <div class="menu-list" id="menuList">
-                    <div class="menu-item active" onclick="showCategory('⭐ Избранное')" draggable="false">
+                    <div class="menu-item" onclick="showCategory('⭐ Избранное')" draggable="false">
                         <div>
                             <span class="menu-item-text">⭐ Избранное</span>
                             
@@ -1122,7 +1122,7 @@
                         </div>
                     </div>
                 
-                    <div class="menu-item" onclick="if(!editMode) showCategory('🟢 Приветствие')" draggable="false">
+                    <div class="menu-item active" onclick="if(!editMode) showCategory('🟢 Приветствие')" draggable="false">
                         <div>
                             <span class="menu-item-text">🟢 Приветствие</span>
                             
@@ -1324,7 +1324,7 @@
         <div class="main-content">
             <div class="content-header">
                 <button class="menu-toggle" id="menuToggle">☰</button>
-                <div class="content-title" id="contentTitle">⭐ Избранное</div>
+                <div class="content-title" id="contentTitle">🟢 Приветствие</div>
                 <div class="header-buttons">
                     <button class="header-btn header-btn-wide" id="favoriteBtn" title="Избранное" onclick="showCategory('⭐ Избранное')" style="display: block;">⭐</button>
                     <button class="header-btn header-btn-wide" id="collapseAllBtn" onclick="collapseAll()" title="Свернуть всё" style="display: block;">▼</button>
@@ -1346,71 +1346,930 @@
             </div>
 
             <div class="scripts-container" id="scriptsContainer">
-                        <div class="script-item " onclick="if(!editMode) copyText(this, 'Вы получили автоматические сообщения, но вижу, что у вас несколько иная задача. Сейчас посмотрю и отпишусь вам 👌')" data-search="⭐ избранное иная задача вы получили автоматические сообщения, но вижу, что у вас несколько иная задача. сейчас посмотрю и отпишусь вам 👌" data-category="⭐ Избранное" data-subsection="Избранные скрипты" data-index="0">
-                            <div class="script-label" onclick="event.stopPropagation(); toggleShowMore('script-fav-0')">Иная задача</div>
-                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Вы получили автоматические сообщения, но вижу, что у вас несколько иная задача. Сейчас посмотрю и отпишусь вам 👌')" title="Копировать"></div>
-                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script-fav-0')" title="Показать всё"></div>
-                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
-                            <div class="script-text collapsed" id="script-fav-0-text">Вы получили автоматические сообщения, но вижу, что у вас несколько иная задача. Сейчас посмотрю и отпишусь вам 👌</div>
-                            
-                        </div>
-                    
-                        <div class="script-item " onclick="if(!editMode) copyText(this, 'Спасибо! Сейчас пришлю вам версию без демо.\nСкачайте файл, на всякий случай 👍')" data-search="⭐ избранное песня / гендер спасибо! сейчас пришлю вам версию без демо.
-скачайте файл, на всякий случай 👍" data-category="⭐ Избранное" data-subsection="Избранные скрипты" data-index="1">
-                            <div class="script-label" onclick="event.stopPropagation(); toggleShowMore('script-fav-1')">Песня / Гендер</div>
-                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Спасибо! Сейчас пришлю вам версию без демо.\nСкачайте файл, на всякий случай 👍')" title="Копировать"></div>
-                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script-fav-1')" title="Показать всё"></div>
-                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
-                            <div class="script-text collapsed" id="script-fav-1-text">Спасибо! Сейчас пришлю вам версию без демо.
-Скачайте файл, на всякий случай 👍</div>
-                            
-                        </div>
-                    
-                        <div class="script-item " onclick="if(!editMode) copyText(this, 'Спасибо! Сейчас пришлю вам готовый полный текст.')" data-search="⭐ избранное стихи/текст спасибо! сейчас пришлю вам готовый полный текст." data-category="⭐ Избранное" data-subsection="Избранные скрипты" data-index="2">
-                            <div class="script-label" onclick="event.stopPropagation(); toggleShowMore('script-fav-2')">Стихи/Текст</div>
-                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Спасибо! Сейчас пришлю вам готовый полный текст.')" title="Копировать"></div>
-                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script-fav-2')" title="Показать всё"></div>
-                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
-                            <div class="script-text collapsed" id="script-fav-2-text">Спасибо! Сейчас пришлю вам готовый полный текст.</div>
-                            
-                        </div>
-                    
-                        <div class="script-item " onclick="if(!editMode) copyText(this, 'Были рады с Вами поработать!\n\nМогли бы вы, пожалуйста, сегодня оставить отзыв на Авито? Хотя бы пару слов.\nКак раз рейтинг повысится благодаря вашему отзыву.\n\nБудем очень благодарны и предоставим вам скидку 10% на следующий заказ (песни, стихи и другие классные подарки 🎁)')" data-search="⭐ избранное авито стандарт сегодня были рады с вами поработать!
-
-могли бы вы, пожалуйста, сегодня оставить отзыв на авито? хотя бы пару слов.
-как раз рейтинг повысится благодаря вашему отзыву.
-
-будем очень благодарны и предоставим вам скидку 10% на следующий заказ (песни, стихи и другие классные подарки 🎁)" data-category="⭐ Избранное" data-subsection="Избранные скрипты" data-index="3">
-                            <div class="script-label" onclick="event.stopPropagation(); toggleShowMore('script-fav-3')">Авито Стандарт Сегодня</div>
-                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Были рады с Вами поработать!\n\nМогли бы вы, пожалуйста, сегодня оставить отзыв на Авито? Хотя бы пару слов.\nКак раз рейтинг повысится благодаря вашему отзыву.\n\nБудем очень благодарны и предоставим вам скидку 10% на следующий заказ (песни, стихи и другие классные подарки 🎁)')" title="Копировать"></div>
-                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script-fav-3')" title="Показать всё"></div>
-                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
-                            <div class="script-text collapsed" id="script-fav-3-text">Были рады с Вами поработать!
-
-Могли бы вы, пожалуйста, сегодня оставить отзыв на Авито? Хотя бы пару слов.
-Как раз рейтинг повысится благодаря вашему отзыву.
-
-Будем очень благодарны и предоставим вам скидку 10% на следующий заказ (песни, стихи и другие классные подарки 🎁)</div>
-                            
-                        </div>
-                    
-                            <div class="subsection-divider"></div>
-                            <div class="divider-btn-row">
-                                <button class="subsection-action-btn placeholder" title="">✏️</button>
-                                <button class="subsection-action-btn" onclick="event.stopPropagation(); moveFavoriteUp(4)" title="Вверх">⬆</button>
-                                <button class="subsection-action-btn" onclick="event.stopPropagation(); moveFavoriteDown(4)" title="Вниз">⬇</button>
-                                <button class="subsection-action-btn fav-toggle-btn" onclick="event.stopPropagation(); removeFavoriteByIdx(4)" title="Убрать из избранного">🗑️</button>
+                    <div class="subsection ">
+                        <div class="subsection-header collapsed" onclick="if(!editMode) toggleSubsection(this)">
+                            <span>Автоматические сообщения</span>
+                            <div class="subsection-actions">
+                                <button class="subsection-action-btn" onclick="editSubsection('Автоматические сообщения')">✏️</button>
+                                <button class="subsection-action-btn" onclick="event.stopPropagation(); moveSubsectionUp('Автоматические сообщения', 0)" disabled="">⬆</button>
+                                <button class="subsection-action-btn" onclick="event.stopPropagation(); moveSubsectionDown('Автоматические сообщения', 0)">⬇</button>
+                                <button class="subsection-action-btn" onclick="event.stopPropagation(); openMoveSubsectionModal('Автоматические сообщения')" title="Переместить в другой раздел">📂</button>
+                                <button class="subsection-action-btn" onclick="deleteSubsection('Автоматические сообщения')">🗑️</button>
                             </div>
-                        
-                        <div class="script-item " onclick="if(!editMode) copyText(this, 'https://docs.google.com/spreadsheets/d/1jIWyMYZ46R9-iAsPZrNKkiYRHQwFAVjopleoDKCOJeg/edit?usp=sharing')" data-search="⭐ избранное расчёты https://docs.google.com/spreadsheets/d/1jiwymyz46r9-iaspzrnkkiyrhqwfavjopleodkcojeg/edit?usp=sharing" data-category="⭐ Избранное" data-subsection="Избранные скрипты" data-index="5">
-                            <div class="script-label" onclick="event.stopPropagation(); toggleShowMore('script-fav-5')">Расчёты</div>
-                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'https://docs.google.com/spreadsheets/d/1jIWyMYZ46R9-iAsPZrNKkiYRHQwFAVjopleoDKCOJeg/edit?usp=sharing')" title="Копировать"></div>
-                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script-fav-5')" title="Показать всё"></div>
-                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
-                            <div class="script-text collapsed" id="script-fav-5-text"><a href="https://docs.google.com/spreadsheets/d/1jIWyMYZ46R9-iAsPZrNKkiYRHQwFAVjopleoDKCOJeg/edit?usp=sharing" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" style="color: #4169E1; text-decoration: underline;">https://docs.google.com/spreadsheets/d/1jIWyMYZ46R9-iAsPZrNKkiYRHQwFAVjopleoDKCOJeg/edit?usp=sharing</a></div>
+                            <span class="arrow">▼</span>
+                        </div>
+                        <div class="subsection-scripts collapsed">
+                
+                        <div class="script-item " onclick="if(false) copyText(this, 'Вы получили автоматические сообщения, но вижу, что у вас несколько иная задача. Сейчас посмотрю и отпишусь вам 👌')" data-search="🟢 приветствие автоматические сообщения иная задача вы получили автоматические сообщения, но вижу, что у вас несколько иная задача. сейчас посмотрю и отпишусь вам 👌" data-category="🟢 Приветствие" data-subsection="Автоматические сообщения" data-index="0">
                             
+                            <div class="script-label" onclick="event.stopPropagation(); toggleShowMore('script--------------------------0')">Иная задача</div>
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Вы получили автоматические сообщения, но вижу, что у вас несколько иная задача. Сейчас посмотрю и отпишусь вам 👌')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script--------------------------0')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script--------------------------0-text">Вы получили автоматические сообщения, но вижу, что у вас несколько иная задача. Сейчас посмотрю и отпишусь вам 👌</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" disabled="" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'Вам пришли несколько ошибочных автоматических сообщений - удалил их.')" data-search="🟢 приветствие автоматические сообщения удалил ошибочные сообщения вам пришли несколько ошибочных автоматических сообщений - удалил их." data-category="🟢 Приветствие" data-subsection="Автоматические сообщения" data-index="1">
+                            
+                            <div class="script-label" onclick="event.stopPropagation(); toggleShowMore('script--------------------------1')">Удалил ошибочные сообщения</div>
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Вам пришли несколько ошибочных автоматических сообщений - удалил их.')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script--------------------------1')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script--------------------------1-text">Вам пришли несколько ошибочных автоматических сообщений - удалил их.</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'Вы получили автоматические сообщения для новых обращений - удалил их.')" data-search="🟢 приветствие автоматические сообщения  вы получили автоматические сообщения для новых обращений - удалил их." data-category="🟢 Приветствие" data-subsection="Автоматические сообщения" data-index="2">
+                            
+                            
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Вы получили автоматические сообщения для новых обращений - удалил их.')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script--------------------------2')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script--------------------------2-text">Вы получили автоматические сообщения для новых обращений - удалил их.</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'Прошу прощения, вам пришли несколько ошибочных автоматических сообщений - удалил их.')" data-search="🟢 приветствие автоматические сообщения  прошу прощения, вам пришли несколько ошибочных автоматических сообщений - удалил их." data-category="🟢 Приветствие" data-subsection="Автоматические сообщения" data-index="3">
+                            
+                            
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Прошу прощения, вам пришли несколько ошибочных автоматических сообщений - удалил их.')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script--------------------------3')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script--------------------------3-text">Прошу прощения, вам пришли несколько ошибочных автоматических сообщений - удалил их.</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'Вы получили автоматические сообщения для песен, прошу прощения. Сейчас пришлю вам описание для текста.')" data-search="🟢 приветствие автоматические сообщения для песен (но задача иная) вы получили автоматические сообщения для песен, прошу прощения. сейчас пришлю вам описание для текста." data-category="🟢 Приветствие" data-subsection="Автоматические сообщения" data-index="4">
+                            
+                            <div class="script-label" onclick="event.stopPropagation(); toggleShowMore('script--------------------------4')">Для песен (но задача иная)</div>
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Вы получили автоматические сообщения для песен, прошу прощения. Сейчас пришлю вам описание для текста.')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script--------------------------4')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script--------------------------4-text">Вы получили автоматические сообщения для песен, прошу прощения. Сейчас пришлю вам описание для текста.</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'Вы получили автоматические сообщения для песен, прошу прощения. Сейчас пришлю вам описание для стихотворения.')" data-search="🟢 приветствие автоматические сообщения  вы получили автоматические сообщения для песен, прошу прощения. сейчас пришлю вам описание для стихотворения." data-category="🟢 Приветствие" data-subsection="Автоматические сообщения" data-index="5">
+                            
+                            
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Вы получили автоматические сообщения для песен, прошу прощения. Сейчас пришлю вам описание для стихотворения.')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script--------------------------5')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script--------------------------5-text">Вы получили автоматические сообщения для песен, прошу прощения. Сейчас пришлю вам описание для стихотворения.</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'Вы получили автоматические сообщения для песен, прошу прощения. Сейчас пришлю вам описание для речи.')" data-search="🟢 приветствие автоматические сообщения  вы получили автоматические сообщения для песен, прошу прощения. сейчас пришлю вам описание для речи." data-category="🟢 Приветствие" data-subsection="Автоматические сообщения" data-index="6">
+                            
+                            
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Вы получили автоматические сообщения для песен, прошу прощения. Сейчас пришлю вам описание для речи.')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script--------------------------6')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script--------------------------6-text">Вы получили автоматические сообщения для песен, прошу прощения. Сейчас пришлю вам описание для речи.</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" disabled="" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
                         </div>
                     </div>
+                <div class="subsection-divider" data-category="🟢 Приветствие" data-subsection-index="1"></div>
+                        <div class="divider-btn-row">
+                            <button class="subsection-action-btn placeholder" title="">✏️</button>
+                            <button class="subsection-action-btn" onclick="moveSubsectionDividerUp(1)" disabled="" title="Вверх">⬆</button>
+                            <button class="subsection-action-btn" onclick="moveSubsectionDividerDown(1)" title="Вниз">⬇</button>
+                            <button class="subsection-action-btn" onclick="deleteSubsectionDivider(1)" title="Удалить">🗑️</button>
+                        </div>
+                    
+                    <div class="subsection ">
+                        <div class="subsection-header collapsed" onclick="if(!editMode) toggleSubsection(this)">
+                            <span>Приветствие</span>
+                            <div class="subsection-actions">
+                                <button class="subsection-action-btn" onclick="editSubsection('Приветствие')">✏️</button>
+                                <button class="subsection-action-btn" onclick="event.stopPropagation(); moveSubsectionUp('Приветствие', 2)">⬆</button>
+                                <button class="subsection-action-btn" onclick="event.stopPropagation(); moveSubsectionDown('Приветствие', 2)">⬇</button>
+                                <button class="subsection-action-btn" onclick="event.stopPropagation(); openMoveSubsectionModal('Приветствие')" title="Переместить в другой раздел">📂</button>
+                                <button class="subsection-action-btn" onclick="deleteSubsection('Приветствие')">🗑️</button>
+                            </div>
+                            <span class="arrow">▼</span>
+                        </div>
+                        <div class="subsection-scripts collapsed">
+                
+                        <div class="script-item " onclick="if(false) copyText(this, 'Здравствуйте! Благодарим за обращение в Лучший Подарок.\nМы ответим вам в самое ближайшее&nbsp;время.')" data-search="🟢 приветствие приветствие  здравствуйте! благодарим за обращение в лучший подарок.
+мы ответим вам в самое ближайшее&nbsp;время." data-category="🟢 Приветствие" data-subsection="Приветствие" data-index="0">
+                            
+                            
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Здравствуйте! Благодарим за обращение в Лучший Подарок.\nМы ответим вам в самое ближайшее&nbsp;время.')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script-------------0')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script-------------0-text">Здравствуйте! Благодарим за обращение в Лучший Подарок.
+Мы ответим вам в самое ближайшее&nbsp;время.</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" disabled="" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'Сейчас продублирую всю информацию.')" data-search="🟢 приветствие приветствие  сейчас продублирую всю информацию." data-category="🟢 Приветствие" data-subsection="Приветствие" data-index="1">
+                            
+                            
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Сейчас продублирую всю информацию.')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script-------------1')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script-------------1-text">Сейчас продублирую всю информацию.</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'Общались с вами по телефону на счёт песни.')" data-search="🟢 приветствие приветствие общались с вами по телефону общались с вами по телефону на счет песни." data-category="🟢 Приветствие" data-subsection="Приветствие" data-index="2">
+                            
+                            <div class="script-label" onclick="event.stopPropagation(); toggleShowMore('script-------------2')">Общались с вами по телефону</div>
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Общались с вами по телефону на счёт песни.')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script-------------2')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script-------------2-text">Общались с вами по телефону на счёт песни.</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'Общались с вами по телефону на счёт гендер-пати.')" data-search="🟢 приветствие приветствие  общались с вами по телефону на счет гендер-пати." data-category="🟢 Приветствие" data-subsection="Приветствие" data-index="3">
+                            
+                            
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Общались с вами по телефону на счёт гендер-пати.')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script-------------3')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script-------------3-text">Общались с вами по телефону на счёт гендер-пати.</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'Общались с вами по телефону на счёт стихотворения.')" data-search="🟢 приветствие приветствие  общались с вами по телефону на счет стихотворения." data-category="🟢 Приветствие" data-subsection="Приветствие" data-index="4">
+                            
+                            
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Общались с вами по телефону на счёт стихотворения.')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script-------------4')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script-------------4-text">Общались с вами по телефону на счёт стихотворения.</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'Не удалось до вас дозвониться.\nПерезвоните, пожалуйста, по номеру 8 909 747 11 77 и мы всё обсудим.')" data-search="🟢 приветствие приветствие недоступен не удалось до вас дозвониться.
+перезвоните, пожалуйста, по номеру 8 909 747 11 77 и мы все обсудим." data-category="🟢 Приветствие" data-subsection="Приветствие" data-index="5">
+                            
+                            <div class="script-label" onclick="event.stopPropagation(); toggleShowMore('script-------------5')">Недоступен</div>
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Не удалось до вас дозвониться.\nПерезвоните, пожалуйста, по номеру 8 909 747 11 77 и мы всё обсудим.')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script-------------5')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script-------------5-text">Не удалось до вас дозвониться.
+Перезвоните, пожалуйста, по номеру 8 909 747 11 77 и мы всё обсудим.</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'В анкете указан номер, он не находится в мессенджере, возможно в нём ошибка. Напишите, пожалуйста, ещё раз ваш номер телефона.')" data-search="🟢 приветствие приветствие  в анкете указан номер, он не находится в мессенджере, возможно в нем ошибка. напишите, пожалуйста, еще раз ваш номер телефона." data-category="🟢 Приветствие" data-subsection="Приветствие" data-index="6">
+                            
+                            
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'В анкете указан номер, он не находится в мессенджере, возможно в нём ошибка. Напишите, пожалуйста, ещё раз ваш номер телефона.')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script-------------6')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script-------------6-text">В анкете указан номер, он не находится в мессенджере, возможно в нём ошибка. Напишите, пожалуйста, ещё раз ваш номер телефона.</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'У вас установлена функция приёма платных сообщений в Телеграм, поэтому, к сожалению, мы не можем вам написать в чат Телеграма. Можем продолжить общение здесь или выбрать другой мессенджер.')" data-search="🟢 приветствие приветствие  у вас установлена функция приема платных сообщений в телеграм, поэтому, к сожалению, мы не можем вам написать в чат телеграма. можем продолжить общение здесь или выбрать другой мессенджер." data-category="🟢 Приветствие" data-subsection="Приветствие" data-index="7">
+                            
+                            
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'У вас установлена функция приёма платных сообщений в Телеграм, поэтому, к сожалению, мы не можем вам написать в чат Телеграма. Можем продолжить общение здесь или выбрать другой мессенджер.')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script-------------7')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script-------------7-text">У вас установлена функция приёма платных сообщений в Телеграм, поэтому, к сожалению, мы не можем вам написать в чат Телеграма. Можем продолжить общение здесь или выбрать другой мессенджер.</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" disabled="" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        </div>
+                    </div>
+                
+                    <div class="subsection ">
+                        <div class="subsection-header collapsed" onclick="if(!editMode) toggleSubsection(this)">
+                            <span>Какая у вас идея?</span>
+                            <div class="subsection-actions">
+                                <button class="subsection-action-btn" onclick="editSubsection('Какая у вас идея?')">✏️</button>
+                                <button class="subsection-action-btn" onclick="event.stopPropagation(); moveSubsectionUp('Какая у вас идея?', 3)">⬆</button>
+                                <button class="subsection-action-btn" onclick="event.stopPropagation(); moveSubsectionDown('Какая у вас идея?', 3)">⬇</button>
+                                <button class="subsection-action-btn" onclick="event.stopPropagation(); openMoveSubsectionModal('Какая у вас идея?')" title="Переместить в другой раздел">📂</button>
+                                <button class="subsection-action-btn" onclick="deleteSubsection('Какая у вас идея?')">🗑️</button>
+                            </div>
+                            <span class="arrow">▼</span>
+                        </div>
+                        <div class="subsection-scripts collapsed">
+                
+                        <div class="script-item " onclick="if(false) copyText(this, 'Какой незабываемый подарок вас интересует - песня, стих, гендер-пати?')" data-search="🟢 приветствие какая у вас идея?  какой незабываемый подарок вас интересует - песня, стих, гендер-пати?" data-category="🟢 Приветствие" data-subsection="Какая у вас идея?" data-index="0">
+                            
+                            
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Какой незабываемый подарок вас интересует - песня, стих, гендер-пати?')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script-------------------0')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script-------------------0-text">Какой незабываемый подарок вас интересует - песня, стих, гендер-пати?</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" disabled="" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'Вы хотели бы в виде готовой песни, стихотворением или поздравительной речью?')" data-search="🟢 приветствие какая у вас идея?  вы хотели бы в виде готовой песни, стихотворением или поздравительной речью?" data-category="🟢 Приветствие" data-subsection="Какая у вас идея?" data-index="1">
+                            
+                            
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Вы хотели бы в виде готовой песни, стихотворением или поздравительной речью?')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script-------------------1')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script-------------------1-text">Вы хотели бы в виде готовой песни, стихотворением или поздравительной речью?</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'Опишите пожалуйста подробней вашу идею и я вас сориентирую 👍')" data-search="🟢 приветствие какая у вас идея?  опишите пожалуйста подробней вашу идею и я вас сориентирую 👍" data-category="🟢 Приветствие" data-subsection="Какая у вас идея?" data-index="2">
+                            
+                            
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Опишите пожалуйста подробней вашу идею и я вас сориентирую 👍')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script-------------------2')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script-------------------2-text">Опишите пожалуйста подробней вашу идею и я вас сориентирую 👍</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" disabled="" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        </div>
+                    </div>
+                
+                    <div class="subsection ">
+                        <div class="subsection-header collapsed" onclick="if(!editMode) toggleSubsection(this)">
+                            <span>Контакты</span>
+                            <div class="subsection-actions">
+                                <button class="subsection-action-btn" onclick="editSubsection('Контакты')">✏️</button>
+                                <button class="subsection-action-btn" onclick="event.stopPropagation(); moveSubsectionUp('Контакты', 4)">⬆</button>
+                                <button class="subsection-action-btn" onclick="event.stopPropagation(); moveSubsectionDown('Контакты', 4)">⬇</button>
+                                <button class="subsection-action-btn" onclick="event.stopPropagation(); openMoveSubsectionModal('Контакты')" title="Переместить в другой раздел">📂</button>
+                                <button class="subsection-action-btn" onclick="deleteSubsection('Контакты')">🗑️</button>
+                            </div>
+                            <span class="arrow">▼</span>
+                        </div>
+                        <div class="subsection-scripts collapsed">
+                
+                        <div class="script-item " onclick="if(false) copyText(this, 'Связаться с нами можете по номеру:\n\n+79097471177\n\nНиже ссылки на чат с нами в\nTelegram (предпочтительней), Whatsapp, Max\n-\nt.me/luchshi_podarok\nwa.me/79097471177\nmax.ru/id744500047055_bot')" data-search="🟢 приветствие контакты контакты связаться с нами можете по номеру:
+
++79097471177
+
+ниже ссылки на чат с нами в
+telegram (предпочтительней), whatsapp, max
+-
+t.me/luchshi_podarok
+wa.me/79097471177
+max.ru/id744500047055_bot" data-category="🟢 Приветствие" data-subsection="Контакты" data-index="0">
+                            
+                            <div class="script-label" onclick="event.stopPropagation(); toggleShowMore('script----------0')">Контакты</div>
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Связаться с нами можете по номеру:\n\n+79097471177\n\nНиже ссылки на чат с нами в\nTelegram (предпочтительней), Whatsapp, Max\n-\nt.me/luchshi_podarok\nwa.me/79097471177\nmax.ru/id744500047055_bot')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script----------0')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script----------0-text">Связаться с нами можете по номеру:
+
++79097471177
+
+Ниже ссылки на чат с нами в
+Telegram (предпочтительней), Whatsapp, Max
+-
+t.me/luchshi_podarok
+wa.me/79097471177
+max.ru/id744500047055_bot</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" disabled="" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'Ниже ссылки на чат с нами в\nTelegram (предпочтительней), Whatsapp, Max\n-\nt.me/luchshi_podarok \nwa.me/79097471177 \nmax.ru/id744500047055_bot')" data-search="🟢 приветствие контакты ссылки на чат с нами ниже ссылки на чат с нами в
+telegram (предпочтительней), whatsapp, max
+-
+t.me/luchshi_podarok 
+wa.me/79097471177 
+max.ru/id744500047055_bot" data-category="🟢 Приветствие" data-subsection="Контакты" data-index="1">
+                            
+                            <div class="script-label" onclick="event.stopPropagation(); toggleShowMore('script----------1')">Ссылки на чат с нами</div>
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Ниже ссылки на чат с нами в\nTelegram (предпочтительней), Whatsapp, Max\n-\nt.me/luchshi_podarok \nwa.me/79097471177 \nmax.ru/id744500047055_bot')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script----------1')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script----------1-text">Ниже ссылки на чат с нами в
+Telegram (предпочтительней), Whatsapp, Max
+-
+t.me/luchshi_podarok 
+wa.me/79097471177 
+max.ru/id744500047055_bot</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'Мы находимся в другом городе, работаем по всей стране.\n\nВ этой услуге расстояние абсолютно не помеха - всё присылаем в удобный для вас мессенджер. Все корректировки, обсуждения - всё в рамках чата, что очень удобно.\n\nПоэтому не смущайтесь расстоянием - пишите, звоните - обсудим любой момент.')" data-search="🟢 приветствие контакты где находитесь? мы находимся в другом городе, работаем по всей стране.
+
+в этой услуге расстояние абсолютно не помеха - все присылаем в удобный для вас мессенджер. все корректировки, обсуждения - все в рамках чата, что очень удобно.
+
+поэтому не смущайтесь расстоянием - пишите, звоните - обсудим любой момент." data-category="🟢 Приветствие" data-subsection="Контакты" data-index="2">
+                            
+                            <div class="script-label" onclick="event.stopPropagation(); toggleShowMore('script----------2')">Где находитесь?</div>
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Мы находимся в другом городе, работаем по всей стране.\n\nВ этой услуге расстояние абсолютно не помеха - всё присылаем в удобный для вас мессенджер. Все корректировки, обсуждения - всё в рамках чата, что очень удобно.\n\nПоэтому не смущайтесь расстоянием - пишите, звоните - обсудим любой момент.')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script----------2')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script----------2-text">Мы находимся в другом городе, работаем по всей стране.
+
+В этой услуге расстояние абсолютно не помеха - всё присылаем в удобный для вас мессенджер. Все корректировки, обсуждения - всё в рамках чата, что очень удобно.
+
+Поэтому не смущайтесь расстоянием - пишите, звоните - обсудим любой момент.</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'Да, хорошо. Пришлём вам всё на указанный в анкете номер.')" data-search="🟢 приветствие контакты куда пришлете? где переписываемся? да, хорошо. пришлем вам все на указанный в анкете номер." data-category="🟢 Приветствие" data-subsection="Контакты" data-index="3">
+                            
+                            <div class="script-label" onclick="event.stopPropagation(); toggleShowMore('script----------3')">Куда пришлёте? Где переписываемся?</div>
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Да, хорошо. Пришлём вам всё на указанный в анкете номер.')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script----------3')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script----------3-text">Да, хорошо. Пришлём вам всё на указанный в анкете номер.</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'Можем присылать всё здесь, или в удобном для вас мессенджере. Как вам было бы удобнее?')" data-search="🟢 приветствие контакты  можем присылать все здесь, или в удобном для вас мессенджере. как вам было бы удобнее?" data-category="🟢 Приветствие" data-subsection="Контакты" data-index="4">
+                            
+                            
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Можем присылать всё здесь, или в удобном для вас мессенджере. Как вам было бы удобнее?')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script----------4')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script----------4-text">Можем присылать всё здесь, или в удобном для вас мессенджере. Как вам было бы удобнее?</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'Готовую работу пришлём вам либо сюда (ссылкой на Яндекс Диск), либо в любой удобный для вас мессенджер (Вацап / Телеграм) и далее вы уже сможете скачать / переслать файл на любое устройство.\nКак вам было бы удобнее?')" data-search="🟢 приветствие контакты  готовую работу пришлем вам либо сюда (ссылкой на яндекс диск), либо в любой удобный для вас мессенджер (вацап / телеграм) и далее вы уже сможете скачать / переслать файл на любое устройство.
+как вам было бы удобнее?" data-category="🟢 Приветствие" data-subsection="Контакты" data-index="5">
+                            
+                            
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Готовую работу пришлём вам либо сюда (ссылкой на Яндекс Диск), либо в любой удобный для вас мессенджер (Вацап / Телеграм) и далее вы уже сможете скачать / переслать файл на любое устройство.\nКак вам было бы удобнее?')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script----------5')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script----------5-text">Готовую работу пришлём вам либо сюда (ссылкой на Яндекс Диск), либо в любой удобный для вас мессенджер (Вацап / Телеграм) и далее вы уже сможете скачать / переслать файл на любое устройство.
+Как вам было бы удобнее?</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'Готовую работу пришлём вам в этот чат прямым файлом или ссылкой на Яндекс Диск и далее вы уже сможете скачать / переслать файл на любое устройство.')" data-search="🟢 приветствие контакты  готовую работу пришлем вам в этот чат прямым файлом или ссылкой на яндекс диск и далее вы уже сможете скачать / переслать файл на любое устройство." data-category="🟢 Приветствие" data-subsection="Контакты" data-index="6">
+                            
+                            
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Готовую работу пришлём вам в этот чат прямым файлом или ссылкой на Яндекс Диск и далее вы уже сможете скачать / переслать файл на любое устройство.')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script----------6')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script----------6-text">Готовую работу пришлём вам в этот чат прямым файлом или ссылкой на Яндекс Диск и далее вы уже сможете скачать / переслать файл на любое устройство.</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'Продублированы сообщения в мессенджер, переписка продолжена там (техническая пометка).')" data-search="🟢 приветствие контакты продублированы сообщения продублированы сообщения в мессенджер, переписка продолжена там (техническая пометка)." data-category="🟢 Приветствие" data-subsection="Контакты" data-index="7">
+                            
+                            <div class="script-label" onclick="event.stopPropagation(); toggleShowMore('script----------7')">Продублированы сообщения</div>
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Продублированы сообщения в мессенджер, переписка продолжена там (техническая пометка).')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script----------7')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script----------7-text">Продублированы сообщения в мессенджер, переписка продолжена там (техническая пометка).</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" disabled="" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        </div>
+                    </div>
+                <div class="subsection-divider" data-category="🟢 Приветствие" data-subsection-index="5"></div>
+                        <div class="divider-btn-row">
+                            <button class="subsection-action-btn placeholder" title="">✏️</button>
+                            <button class="subsection-action-btn" onclick="moveSubsectionDividerUp(5)" title="Вверх">⬆</button>
+                            <button class="subsection-action-btn" onclick="moveSubsectionDividerDown(5)" title="Вниз">⬇</button>
+                            <button class="subsection-action-btn" onclick="deleteSubsectionDivider(5)" title="Удалить">🗑️</button>
+                        </div>
+                    
+                    <div class="subsection ">
+                        <div class="subsection-header collapsed" onclick="if(!editMode) toggleSubsection(this)">
+                            <span>Текстом, пожалуйста</span>
+                            <div class="subsection-actions">
+                                <button class="subsection-action-btn" onclick="editSubsection('Текстом, пожалуйста')">✏️</button>
+                                <button class="subsection-action-btn" onclick="event.stopPropagation(); moveSubsectionUp('Текстом, пожалуйста', 6)">⬆</button>
+                                <button class="subsection-action-btn" onclick="event.stopPropagation(); moveSubsectionDown('Текстом, пожалуйста', 6)">⬇</button>
+                                <button class="subsection-action-btn" onclick="event.stopPropagation(); openMoveSubsectionModal('Текстом, пожалуйста')" title="Переместить в другой раздел">📂</button>
+                                <button class="subsection-action-btn" onclick="deleteSubsection('Текстом, пожалуйста')">🗑️</button>
+                            </div>
+                            <span class="arrow">▼</span>
+                        </div>
+                        <div class="subsection-scripts collapsed">
+                
+                        <div class="script-item " onclick="if(false) copyText(this, 'Понимаю, что голосом для вас быстрее и удобнее, но потом очень непросто разбираться в голосовых при составлении работы, поэтому попрошу вас всё присылать текстом, пожалуйста.')" data-search="🟢 приветствие текстом, пожалуйста  понимаю, что голосом для вас быстрее и удобнее, но потом очень непросто разбираться в голосовых при составлении работы, поэтому попрошу вас все присылать текстом, пожалуйста." data-category="🟢 Приветствие" data-subsection="Текстом, пожалуйста" data-index="0">
+                            
+                            
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Понимаю, что голосом для вас быстрее и удобнее, но потом очень непросто разбираться в голосовых при составлении работы, поэтому попрошу вас всё присылать текстом, пожалуйста.')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script---------------------0')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script---------------------0-text">Понимаю, что голосом для вас быстрее и удобнее, но потом очень непросто разбираться в голосовых при составлении работы, поэтому попрошу вас всё присылать текстом, пожалуйста.</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" disabled="" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'Продублируйте, пожалуйста, текстом. Понимаю, что голосом для вас быстрее и удобнее, но потом очень непросто разбираться в голосовых при составлении работы, поэтому попрошу вас всё присылать текстом, пожалуйста.')" data-search="🟢 приветствие текстом, пожалуйста  продублируйте, пожалуйста, текстом. понимаю, что голосом для вас быстрее и удобнее, но потом очень непросто разбираться в голосовых при составлении работы, поэтому попрошу вас все присылать текстом, пожалуйста." data-category="🟢 Приветствие" data-subsection="Текстом, пожалуйста" data-index="1">
+                            
+                            
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Продублируйте, пожалуйста, текстом. Понимаю, что голосом для вас быстрее и удобнее, но потом очень непросто разбираться в голосовых при составлении работы, поэтому попрошу вас всё присылать текстом, пожалуйста.')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script---------------------1')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script---------------------1-text">Продублируйте, пожалуйста, текстом. Понимаю, что голосом для вас быстрее и удобнее, но потом очень непросто разбираться в голосовых при составлении работы, поэтому попрошу вас всё присылать текстом, пожалуйста.</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'Понимаю, что голосом для вас быстрее и удобнее, но потом очень непросто разбираться в корректировках, не имея перед собой письменно закреплённых правок. Поэтому попрошу вас всё присылать текстом, пожалуйста.')" data-search="🟢 приветствие текстом, пожалуйста  понимаю, что голосом для вас быстрее и удобнее, но потом очень непросто разбираться в корректировках, не имея перед собой письменно закрепленных правок. поэтому попрошу вас все присылать текстом, пожалуйста." data-category="🟢 Приветствие" data-subsection="Текстом, пожалуйста" data-index="2">
+                            
+                            
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Понимаю, что голосом для вас быстрее и удобнее, но потом очень непросто разбираться в корректировках, не имея перед собой письменно закреплённых правок. Поэтому попрошу вас всё присылать текстом, пожалуйста.')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script---------------------2')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script---------------------2-text">Понимаю, что голосом для вас быстрее и удобнее, но потом очень непросто разбираться в корректировках, не имея перед собой письменно закреплённых правок. Поэтому попрошу вас всё присылать текстом, пожалуйста.</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'Можете не торопиться, напишите всё в комфортном для себя темпе.')" data-search="🟢 приветствие текстом, пожалуйста  можете не торопиться, напишите все в комфортном для себя темпе." data-category="🟢 Приветствие" data-subsection="Текстом, пожалуйста" data-index="3">
+                            
+                            
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Можете не торопиться, напишите всё в комфортном для себя темпе.')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script---------------------3')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script---------------------3-text">Можете не торопиться, напишите всё в комфортном для себя темпе.</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" disabled="" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        </div>
+                    </div>
+                
+                    <div class="subsection ">
+                        <div class="subsection-header collapsed" onclick="if(!editMode) toggleSubsection(this)">
+                            <span>Задержка в ответе</span>
+                            <div class="subsection-actions">
+                                <button class="subsection-action-btn" onclick="editSubsection('Задержка в ответе')">✏️</button>
+                                <button class="subsection-action-btn" onclick="event.stopPropagation(); moveSubsectionUp('Задержка в ответе', 7)">⬆</button>
+                                <button class="subsection-action-btn" onclick="event.stopPropagation(); moveSubsectionDown('Задержка в ответе', 7)">⬇</button>
+                                <button class="subsection-action-btn" onclick="event.stopPropagation(); openMoveSubsectionModal('Задержка в ответе')" title="Переместить в другой раздел">📂</button>
+                                <button class="subsection-action-btn" onclick="deleteSubsection('Задержка в ответе')">🗑️</button>
+                            </div>
+                            <span class="arrow">▼</span>
+                        </div>
+                        <div class="subsection-scripts collapsed">
+                
+                        <div class="script-item " onclick="if(false) copyText(this, 'Прошу прощения за задержку в ответе.')" data-search="🟢 приветствие задержка в ответе  прошу прощения за задержку в ответе." data-category="🟢 Приветствие" data-subsection="Задержка в ответе" data-index="0">
+                            
+                            
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Прошу прощения за задержку в ответе.')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script-------------------0')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script-------------------0-text">Прошу прощения за задержку в ответе.</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" disabled="" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'Прошу прощения за задержку в ответе, были без связи')" data-search="🟢 приветствие задержка в ответе  прошу прощения за задержку в ответе, были без связи" data-category="🟢 Приветствие" data-subsection="Задержка в ответе" data-index="1">
+                            
+                            
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Прошу прощения за задержку в ответе, были без связи')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script-------------------1')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script-------------------1-text">Прошу прощения за задержку в ответе, были без связи</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'Извиняюсь, что не отвечаем быстро - сейчас большая загруженность, но в любом случае мы ответим на каждый вопрос.')" data-search="🟢 приветствие задержка в ответе  извиняюсь, что не отвечаем быстро - сейчас большая загруженность, но в любом случае мы ответим на каждый вопрос." data-category="🟢 Приветствие" data-subsection="Задержка в ответе" data-index="2">
+                            
+                            
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Извиняюсь, что не отвечаем быстро - сейчас большая загруженность, но в любом случае мы ответим на каждый вопрос.')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script-------------------2')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script-------------------2-text">Извиняюсь, что не отвечаем быстро - сейчас большая загруженность, но в любом случае мы ответим на каждый вопрос.</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'В ближайшие 2 часа будем без связи, как только выйдем на связь - ответим на все ваши вопросы 👌')" data-search="🟢 приветствие задержка в ответе  в ближайшие 2 часа будем без связи, как только выйдем на связь - ответим на все ваши вопросы 👌" data-category="🟢 Приветствие" data-subsection="Задержка в ответе" data-index="3">
+                            
+                            
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'В ближайшие 2 часа будем без связи, как только выйдем на связь - ответим на все ваши вопросы 👌')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script-------------------3')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script-------------------3-text">В ближайшие 2 часа будем без связи, как только выйдем на связь - ответим на все ваши вопросы 👌</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" disabled="" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        </div>
+                    </div>
+                
+                    <div class="subsection ">
+                        <div class="subsection-header collapsed" onclick="if(!editMode) toggleSubsection(this)">
+                            <span>Заканчиваем рабочий день</span>
+                            <div class="subsection-actions">
+                                <button class="subsection-action-btn" onclick="editSubsection('Заканчиваем рабочий день')">✏️</button>
+                                <button class="subsection-action-btn" onclick="event.stopPropagation(); moveSubsectionUp('Заканчиваем рабочий день', 8)">⬆</button>
+                                <button class="subsection-action-btn" onclick="event.stopPropagation(); moveSubsectionDown('Заканчиваем рабочий день', 8)">⬇</button>
+                                <button class="subsection-action-btn" onclick="event.stopPropagation(); openMoveSubsectionModal('Заканчиваем рабочий день')" title="Переместить в другой раздел">📂</button>
+                                <button class="subsection-action-btn" onclick="deleteSubsection('Заканчиваем рабочий день')">🗑️</button>
+                            </div>
+                            <span class="arrow">▼</span>
+                        </div>
+                        <div class="subsection-scripts collapsed">
+                
+                        <div class="script-item " onclick="if(false) copyText(this, 'Сейчас заканчиваем рабочий день - ответить вам сможем завтра в первой половине дня. Будем с вами на связи 👍')" data-search="🟢 приветствие заканчиваем рабочий день  сейчас заканчиваем рабочий день - ответить вам сможем завтра в первой половине дня. будем с вами на связи 👍" data-category="🟢 Приветствие" data-subsection="Заканчиваем рабочий день" data-index="0">
+                            
+                            
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Сейчас заканчиваем рабочий день - ответить вам сможем завтра в первой половине дня. Будем с вами на связи 👍')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script--------------------------0')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script--------------------------0-text">Сейчас заканчиваем рабочий день - ответить вам сможем завтра в первой половине дня. Будем с вами на связи 👍</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" disabled="" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'Сейчас заканчиваем рабочий день - если у вас будут вопросы, то сможем ответить вам завтра в первой половине дня. Будем с вами на связи 👍')" data-search="🟢 приветствие заканчиваем рабочий день  сейчас заканчиваем рабочий день - если у вас будут вопросы, то сможем ответить вам завтра в первой половине дня. будем с вами на связи 👍" data-category="🟢 Приветствие" data-subsection="Заканчиваем рабочий день" data-index="1">
+                            
+                            
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Сейчас заканчиваем рабочий день - если у вас будут вопросы, то сможем ответить вам завтра в первой половине дня. Будем с вами на связи 👍')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script--------------------------1')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script--------------------------1-text">Сейчас заканчиваем рабочий день - если у вас будут вопросы, то сможем ответить вам завтра в первой половине дня. Будем с вами на связи 👍</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" disabled="" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        </div>
+                    </div>
+                
+                    <div class="subsection ">
+                        <div class="subsection-header collapsed" onclick="if(!editMode) toggleSubsection(this)">
+                            <span>Не занимаемся</span>
+                            <div class="subsection-actions">
+                                <button class="subsection-action-btn" onclick="editSubsection('Не занимаемся')">✏️</button>
+                                <button class="subsection-action-btn" onclick="event.stopPropagation(); moveSubsectionUp('Не занимаемся', 9)">⬆</button>
+                                <button class="subsection-action-btn" onclick="event.stopPropagation(); moveSubsectionDown('Не занимаемся', 9)" disabled="">⬇</button>
+                                <button class="subsection-action-btn" onclick="event.stopPropagation(); openMoveSubsectionModal('Не занимаемся')" title="Переместить в другой раздел">📂</button>
+                                <button class="subsection-action-btn" onclick="deleteSubsection('Не занимаемся')">🗑️</button>
+                            </div>
+                            <span class="arrow">▼</span>
+                        </div>
+                        <div class="subsection-scripts collapsed">
+                
+                        <div class="script-item " onclick="if(false) copyText(this, 'Таким не занимаемся, к сожалению.')" data-search="🟢 приветствие не занимаемся не занимаемся таким не занимаемся, к сожалению." data-category="🟢 Приветствие" data-subsection="Не занимаемся" data-index="0">
+                            
+                            <div class="script-label" onclick="event.stopPropagation(); toggleShowMore('script---------------0')">Не занимаемся</div>
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Таким не занимаемся, к сожалению.')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script---------------0')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script---------------0-text">Таким не занимаемся, к сожалению.</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" disabled="" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'К сожалению, государство в настоящее время достаточно легко отслеживает и наказывает авторов текстов и песен на подобную&nbsp;тематику - поэтому этот заказ сделать не сможем, прошу прощения.')" data-search="🟢 приветствие не занимаемся запрещенные темы - песня к сожалению, государство в настоящее время достаточно легко отслеживает и наказывает авторов текстов и песен на подобную&nbsp;тематику - поэтому этот заказ сделать не сможем, прошу прощения." data-category="🟢 Приветствие" data-subsection="Не занимаемся" data-index="1">
+                            
+                            <div class="script-label" onclick="event.stopPropagation(); toggleShowMore('script---------------1')">Запрещенные темы - Песня</div>
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'К сожалению, государство в настоящее время достаточно легко отслеживает и наказывает авторов текстов и песен на подобную&nbsp;тематику - поэтому этот заказ сделать не сможем, прошу прощения.')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script---------------1')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script---------------1-text">К сожалению, государство в настоящее время достаточно легко отслеживает и наказывает авторов текстов и песен на подобную&nbsp;тематику - поэтому этот заказ сделать не сможем, прошу прощения.</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'Понимаем, что вы не заказчик, а коллега по рынку.\nДавайте не будем тратить время друг друга и оставим обсуждение условий только для реальных клиентов.\nСпасибо, что с уважением отнесётесь к этому 😉')" data-search="🟢 приветствие не занимаемся конкурент мозолит понимаем, что вы не заказчик, а коллега по рынку.
+давайте не будем тратить время друг друга и оставим обсуждение условий только для реальных клиентов.
+спасибо, что с уважением отнесетесь к этому 😉" data-category="🟢 Приветствие" data-subsection="Не занимаемся" data-index="2">
+                            
+                            <div class="script-label" onclick="event.stopPropagation(); toggleShowMore('script---------------2')">Конкурент мозолит</div>
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Понимаем, что вы не заказчик, а коллега по рынку.\nДавайте не будем тратить время друг друга и оставим обсуждение условий только для реальных клиентов.\nСпасибо, что с уважением отнесётесь к этому 😉')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script---------------2')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script---------------2-text">Понимаем, что вы не заказчик, а коллега по рынку.
+Давайте не будем тратить время друг друга и оставим обсуждение условий только для реальных клиентов.
+Спасибо, что с уважением отнесётесь к этому 😉</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'Ваш запрос распознан нашей системой как подозрительный, схож с пустым запросом направленным от пользователей-конкурентов - мы внимательно относимся к таким обращениям, и, в случае подозрительной активности, направляем обращение в поддержку Авито для анализа профиля и связанных с ним аккаунтов. \n\nЕсли ваш запрос действительно является фейковым - просим оставить эту затею, так как это является грубым нарушением правил Авито, и влечёт за собой блокировку не только связанных, но и основного вашего аккаунта.')" data-search="🟢 приветствие не занимаемся конкурент черный заказ ваш запрос распознан нашей системой как подозрительный, схож с пустым запросом направленным от пользователей-конкурентов - мы внимательно относимся к таким обращениям, и, в случае подозрительной активности, направляем обращение в поддержку авито для анализа профиля и связанных с ним аккаунтов. 
+
+если ваш запрос действительно является фейковым - просим оставить эту затею, так как это является грубым нарушением правил авито, и влечет за собой блокировку не только связанных, но и основного вашего аккаунта." data-category="🟢 Приветствие" data-subsection="Не занимаемся" data-index="3">
+                            
+                            <div class="script-label" onclick="event.stopPropagation(); toggleShowMore('script---------------3')">Конкурент черный заказ</div>
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Ваш запрос распознан нашей системой как подозрительный, схож с пустым запросом направленным от пользователей-конкурентов - мы внимательно относимся к таким обращениям, и, в случае подозрительной активности, направляем обращение в поддержку Авито для анализа профиля и связанных с ним аккаунтов. \n\nЕсли ваш запрос действительно является фейковым - просим оставить эту затею, так как это является грубым нарушением правил Авито, и влечёт за собой блокировку не только связанных, но и основного вашего аккаунта.')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script---------------3')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script---------------3-text">Ваш запрос распознан нашей системой как подозрительный, схож с пустым запросом направленным от пользователей-конкурентов - мы внимательно относимся к таким обращениям, и, в случае подозрительной активности, направляем обращение в поддержку Авито для анализа профиля и связанных с ним аккаунтов. 
+
+Если ваш запрос действительно является фейковым - просим оставить эту затею, так как это является грубым нарушением правил Авито, и влечёт за собой блокировку не только связанных, но и основного вашего аккаунта.</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'Вам предоставлено описание услуги, то как мы работаем, и наши примеры - и в данной работе, как и во всех, мы придерживаемся этих правил.\nВаше изумление сейчас - совершенно не понятно и не поддаётся иному объяснению, кроме как постановочное.')" data-search="🟢 приветствие не занимаемся конкурент постановка вам предоставлено описание услуги, то как мы работаем, и наши примеры - и в данной работе, как и во всех, мы придерживаемся этих правил.
+ваше изумление сейчас - совершенно не понятно и не поддается иному объяснению, кроме как постановочное." data-category="🟢 Приветствие" data-subsection="Не занимаемся" data-index="4">
+                            
+                            <div class="script-label" onclick="event.stopPropagation(); toggleShowMore('script---------------4')">Конкурент постановка</div>
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Вам предоставлено описание услуги, то как мы работаем, и наши примеры - и в данной работе, как и во всех, мы придерживаемся этих правил.\nВаше изумление сейчас - совершенно не понятно и не поддаётся иному объяснению, кроме как постановочное.')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script---------------4')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script---------------4-text">Вам предоставлено описание услуги, то как мы работаем, и наши примеры - и в данной работе, как и во всех, мы придерживаемся этих правил.
+Ваше изумление сейчас - совершенно не понятно и не поддаётся иному объяснению, кроме как постановочное.</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        <div class="script-item " onclick="if(false) copyText(this, 'К сожалению, недобросовестные конкуренты любят устраивать фейковые возмущения и проблемные ситуации, для того чтобы в итоге оставить плохой отзыв - лишь бы за что-то зацепиться.\n\nМы внимательно относимся к таким обращениям, и, в случае подозрительной активности, направляем обращение в поддержку Авито для анализа профиля и связанных с ним аккаунтов. \n\nЕсли ваш запрос действительно является фейковым - просим оставить эту затею, так как это является грубым нарушением правил Авито, и влечёт за собой блокировку не только связанных, но и основного вашего аккаунта.')" data-search="🟢 приветствие не занимаемся конкурент постановка к сожалению, недобросовестные конкуренты любят устраивать фейковые возмущения и проблемные ситуации, для того чтобы в итоге оставить плохой отзыв - лишь бы за что-то зацепиться.
+
+мы внимательно относимся к таким обращениям, и, в случае подозрительной активности, направляем обращение в поддержку авито для анализа профиля и связанных с ним аккаунтов. 
+
+если ваш запрос действительно является фейковым - просим оставить эту затею, так как это является грубым нарушением правил авито, и влечет за собой блокировку не только связанных, но и основного вашего аккаунта." data-category="🟢 Приветствие" data-subsection="Не занимаемся" data-index="5">
+                            
+                            <div class="script-label" onclick="event.stopPropagation(); toggleShowMore('script---------------5')">Конкурент постановка</div>
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'К сожалению, недобросовестные конкуренты любят устраивать фейковые возмущения и проблемные ситуации, для того чтобы в итоге оставить плохой отзыв - лишь бы за что-то зацепиться.\n\nМы внимательно относимся к таким обращениям, и, в случае подозрительной активности, направляем обращение в поддержку Авито для анализа профиля и связанных с ним аккаунтов. \n\nЕсли ваш запрос действительно является фейковым - просим оставить эту затею, так как это является грубым нарушением правил Авито, и влечёт за собой блокировку не только связанных, но и основного вашего аккаунта.')" title="Копировать"></div>
+                            <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script---------------5')" title="Показать всё"></div>
+                            <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
+                            <div class="script-text collapsed" id="script---------------5-text">К сожалению, недобросовестные конкуренты любят устраивать фейковые возмущения и проблемные ситуации, для того чтобы в итоге оставить плохой отзыв - лишь бы за что-то зацепиться.
+
+Мы внимательно относимся к таким обращениям, и, в случае подозрительной активности, направляем обращение в поддержку Авито для анализа профиля и связанных с ним аккаунтов. 
+
+Если ваш запрос действительно является фейковым - просим оставить эту затею, так как это является грубым нарушением правил Авито, и влечёт за собой блокировку не только связанных, но и основного вашего аккаунта.</div>
+                            
+                            <div class="script-item-actions">
+                                
+                                
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptUp(this.parentElement.parentElement)" title="Вверх">⬆</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); moveScriptDown(this.parentElement.parentElement)" disabled="" title="Вниз">⬇</button>
+                                <button class="action-btn" onclick="event.stopPropagation(); deleteScript(this.parentElement.parentElement)" title="Удалить">🗑️</button>
+                            </div>
+                        </div>
+                    
+                        </div>
+                    </div>
+                </div>
     </div>
 
     <div class="copy-indicator" id="copyIndicator">Скопировано</div>
@@ -1507,28 +2366,28 @@
                                 "content": "Вы получили автоматические сообщения, но вижу, что у вас несколько иная задача. Сейчас посмотрю и отпишусь вам 👌"
                         },
                         {
-                                "label": "Для песен (нужно текст песни)",
-                                "content": "Вы получили автоматические сообщения для песен, прошу прощения. Сейчас пришлю вам описание для текста."
-                        },
-                        {
-                                "label": "Для песен (нужно стихи)",
-                                "content": "Вы получили автоматические сообщения для песен, прошу прощения. Сейчас пришлю вам описание для стихотворения."
-                        },
-                        {
-                                "label": "Для песен (нужно речь)",
-                                "content": "Вы получили автоматические сообщения для песен, прошу прощения. Сейчас пришлю вам описание для речи."
-                        },
-                        {
                                 "label": "Удалил ошибочные сообщения",
                                 "content": "Вам пришли несколько ошибочных автоматических сообщений - удалил их."
                         },
                         {
-                                "label": "Удалил ошибочные сообщения",
+                                "label": "",
+                                "content": "Вы получили автоматические сообщения для новых обращений - удалил их."
+                        },
+                        {
+                                "label": "",
                                 "content": "Прошу прощения, вам пришли несколько ошибочных автоматических сообщений - удалил их."
                         },
                         {
-                                "label": "Удалил ошибочные сообщения",
-                                "content": "Вы получили автоматические сообщения для новых обращений - удалил их."
+                                "label": "Для песен (но задача иная)",
+                                "content": "Вы получили автоматические сообщения для песен, прошу прощения. Сейчас пришлю вам описание для текста."
+                        },
+                        {
+                                "label": "",
+                                "content": "Вы получили автоматические сообщения для песен, прошу прощения. Сейчас пришлю вам описание для стихотворения."
+                        },
+                        {
+                                "label": "",
+                                "content": "Вы получили автоматические сообщения для песен, прошу прощения. Сейчас пришлю вам описание для речи."
                         }
                 ],
                 "---SUBSECTION-DIVIDER-2---": [],
@@ -5355,4 +6214,4 @@ function clearSearchField() {
     </div>
 
 
-</div></body></html>
+</div><div style="color-scheme: unset; forced-color-adjust: unset; mask: unset; math-depth: unset; position: absolute; position-anchor: unset; text-size-adjust: unset; appearance: unset; color: unset; font: unset; font-palette: unset; font-synthesis: unset; position-area: unset; text-orientation: unset; text-rendering: unset; text-spacing-trim: unset; -webkit-font-smoothing: unset; -webkit-locale: unset; -webkit-text-orientation: unset; -webkit-writing-mode: unset; writing-mode: unset; zoom: unset; accent-color: unset; place-content: unset; place-items: unset; place-self: unset; alignment-baseline: unset; anchor-name: unset; anchor-scope: unset; animation-composition: unset; animation: unset; app-region: unset; aspect-ratio: unset; backdrop-filter: unset; backface-visibility: unset; background: unset; background-blend-mode: unset; baseline-shift: unset; baseline-source: unset; block-size: unset; border-block: unset; border: unset; border-radius: unset; border-collapse: unset; border-end-end-radius: unset; border-end-start-radius: unset; border-inline: unset; border-start-end-radius: unset; border-start-start-radius: unset; bottom: unset; box-decoration-break: unset; box-shadow: unset; box-sizing: unset; break-after: unset; break-before: unset; break-inside: unset; buffered-rendering: unset; caption-side: unset; caret-color: unset; clear: unset; clip: unset; clip-path: unset; clip-rule: unset; color-interpolation: unset; color-interpolation-filters: unset; color-rendering: unset; columns: unset; column-fill: unset; gap: unset; column-rule: unset; column-span: unset; contain: unset; contain-intrinsic-block-size: unset; contain-intrinsic-size: unset; contain-intrinsic-inline-size: unset; container: unset; content: unset; content-visibility: unset; counter-increment: unset; counter-reset: unset; counter-set: unset; cursor: unset; cx: unset; cy: unset; d: unset; display: unset; dominant-baseline: unset; dynamic-range-limit: unset; empty-cells: unset; field-sizing: unset; fill: unset; fill-opacity: unset; fill-rule: unset; filter: unset; flex: unset; flex-flow: unset; float: unset; flood-color: unset; flood-opacity: unset; grid: unset; grid-area: unset; height: unset; hyphenate-character: unset; hyphenate-limit-chars: unset; hyphens: unset; image-orientation: unset; image-rendering: unset; initial-letter: unset; inline-size: unset; inset-block: unset; inset-inline: unset; interpolate-size: unset; isolation: unset; left: 0px; letter-spacing: unset; lighting-color: unset; line-break: unset; list-style: unset; margin-block: unset; margin: unset; margin-inline: unset; marker: unset; mask-type: unset; math-shift: unset; math-style: unset; max-block-size: unset; max-height: unset; max-inline-size: unset; max-width: unset; min-block-size: unset; min-height: unset; min-inline-size: unset; min-width: unset; mix-blend-mode: unset; object-fit: unset; object-position: unset; object-view-box: unset; offset: unset; opacity: unset; order: unset; orphans: unset; outline: unset; outline-offset: unset; overflow-anchor: unset; overflow-block: unset; overflow-clip-margin: unset; overflow-inline: unset; overflow-wrap: unset; overflow: unset; overlay: unset; overscroll-behavior-block: unset; overscroll-behavior-inline: unset; overscroll-behavior: unset; padding-block: unset; padding: unset; padding-inline: unset; page: unset; page-orientation: unset; paint-order: unset; perspective: unset; perspective-origin: unset; pointer-events: unset; position-try: unset; position-visibility: unset; print-color-adjust: unset; quotes: unset; r: unset; reading-flow: unset; reading-order: unset; resize: unset; right: unset; rotate: unset; ruby-align: unset; ruby-position: unset; rx: unset; ry: unset; scale: unset; scroll-behavior: unset; scroll-initial-target: unset; scroll-margin-block: unset; scroll-margin: unset; scroll-margin-inline: unset; scroll-marker-group: unset; scroll-padding-block: unset; scroll-padding: unset; scroll-padding-inline: unset; scroll-snap-align: unset; scroll-snap-stop: unset; scroll-snap-type: unset; scroll-timeline: unset; scrollbar-color: unset; scrollbar-gutter: unset; scrollbar-width: unset; shape-image-threshold: unset; shape-margin: unset; shape-outside: unset; shape-rendering: unset; size: unset; speak: unset; stop-color: unset; stop-opacity: unset; stroke: unset; stroke-dasharray: unset; stroke-dashoffset: unset; stroke-linecap: unset; stroke-linejoin: unset; stroke-miterlimit: unset; stroke-opacity: unset; stroke-width: unset; tab-size: unset; table-layout: unset; text-align: unset; text-align-last: unset; text-anchor: unset; text-box: unset; text-combine-upright: unset; text-decoration: unset; text-decoration-skip-ink: unset; text-emphasis: unset; text-emphasis-position: unset; text-indent: unset; text-overflow: unset; text-shadow: unset; text-transform: unset; text-underline-offset: unset; text-underline-position: unset; text-wrap: unset; timeline-scope: unset; top: 0px; touch-action: unset; transform: unset; transform-box: unset; transform-origin: unset; transform-style: unset; transition: unset; translate: unset; user-select: unset; vector-effect: unset; vertical-align: unset; view-timeline: unset; view-transition-class: unset; view-transition-name: unset; visibility: unset; border-spacing: unset; -webkit-box-align: unset; -webkit-box-decoration-break: unset; -webkit-box-direction: unset; -webkit-box-flex: unset; -webkit-box-ordinal-group: unset; -webkit-box-orient: unset; -webkit-box-pack: unset; -webkit-box-reflect: unset; -webkit-line-break: unset; -webkit-line-clamp: unset; -webkit-mask-box-image: unset; -webkit-rtl-ordering: unset; -webkit-ruby-position: unset; -webkit-tap-highlight-color: unset; -webkit-text-combine: unset; -webkit-text-decorations-in-effect: unset; -webkit-text-fill-color: unset; -webkit-text-security: unset; -webkit-text-stroke: unset; -webkit-user-drag: unset; white-space-collapse: unset; widows: unset; width: unset; will-change: unset; word-break: unset; word-spacing: unset; x: unset; y: unset; z-index: unset;"><div style="color-scheme: unset; forced-color-adjust: unset; mask: unset; math-depth: unset; position: absolute; position-anchor: unset; text-size-adjust: unset; appearance: unset; color: unset; font: unset; font-palette: unset; font-synthesis: unset; position-area: unset; text-orientation: unset; text-rendering: unset; text-spacing-trim: unset; -webkit-font-smoothing: unset; -webkit-locale: unset; -webkit-text-orientation: unset; -webkit-writing-mode: unset; writing-mode: unset; zoom: unset; accent-color: unset; place-content: unset; place-items: unset; place-self: unset; alignment-baseline: unset; anchor-name: unset; anchor-scope: unset; animation-composition: unset; animation: unset; app-region: unset; aspect-ratio: unset; backdrop-filter: unset; backface-visibility: unset; background: unset; background-blend-mode: unset; baseline-shift: unset; baseline-source: unset; block-size: unset; border-block: unset; border: unset; border-radius: unset; border-collapse: unset; border-end-end-radius: unset; border-end-start-radius: unset; border-inline: unset; border-start-end-radius: unset; border-start-start-radius: unset; bottom: unset; box-decoration-break: unset; box-shadow: unset; box-sizing: unset; break-after: unset; break-before: unset; break-inside: unset; buffered-rendering: unset; caption-side: unset; caret-color: unset; clear: unset; clip: unset; clip-path: unset; clip-rule: unset; color-interpolation: unset; color-interpolation-filters: unset; color-rendering: unset; columns: unset; column-fill: unset; gap: unset; column-rule: unset; column-span: unset; contain: unset; contain-intrinsic-block-size: unset; contain-intrinsic-size: unset; contain-intrinsic-inline-size: unset; container: unset; content: unset; content-visibility: unset; counter-increment: unset; counter-reset: unset; counter-set: unset; cursor: unset; cx: unset; cy: unset; d: unset; display: unset; dominant-baseline: unset; dynamic-range-limit: unset; empty-cells: unset; field-sizing: unset; fill: unset; fill-opacity: unset; fill-rule: unset; filter: unset; flex: unset; flex-flow: unset; float: unset; flood-color: unset; flood-opacity: unset; grid: unset; grid-area: unset; height: unset; hyphenate-character: unset; hyphenate-limit-chars: unset; hyphens: unset; image-orientation: unset; image-rendering: unset; initial-letter: unset; inline-size: unset; inset-block: unset; inset-inline: unset; interpolate-size: unset; isolation: unset; left: 0px; letter-spacing: unset; lighting-color: unset; line-break: unset; list-style: unset; margin-block: unset; margin: unset; margin-inline: unset; marker: unset; mask-type: unset; math-shift: unset; math-style: unset; max-block-size: unset; max-height: unset; max-inline-size: unset; max-width: unset; min-block-size: unset; min-height: unset; min-inline-size: unset; min-width: unset; mix-blend-mode: unset; object-fit: unset; object-position: unset; object-view-box: unset; offset: unset; opacity: unset; order: unset; orphans: unset; outline: unset; outline-offset: unset; overflow-anchor: unset; overflow-block: unset; overflow-clip-margin: unset; overflow-inline: unset; overflow-wrap: unset; overflow: unset; overlay: unset; overscroll-behavior-block: unset; overscroll-behavior-inline: unset; overscroll-behavior: unset; padding-block: unset; padding: unset; padding-inline: unset; page: unset; page-orientation: unset; paint-order: unset; perspective: unset; perspective-origin: unset; pointer-events: unset; position-try: unset; position-visibility: unset; print-color-adjust: unset; quotes: unset; r: unset; reading-flow: unset; reading-order: unset; resize: unset; right: unset; rotate: unset; ruby-align: unset; ruby-position: unset; rx: unset; ry: unset; scale: unset; scroll-behavior: unset; scroll-initial-target: unset; scroll-margin-block: unset; scroll-margin: unset; scroll-margin-inline: unset; scroll-marker-group: unset; scroll-padding-block: unset; scroll-padding: unset; scroll-padding-inline: unset; scroll-snap-align: unset; scroll-snap-stop: unset; scroll-snap-type: unset; scroll-timeline: unset; scrollbar-color: unset; scrollbar-gutter: unset; scrollbar-width: unset; shape-image-threshold: unset; shape-margin: unset; shape-outside: unset; shape-rendering: unset; size: unset; speak: unset; stop-color: unset; stop-opacity: unset; stroke: unset; stroke-dasharray: unset; stroke-dashoffset: unset; stroke-linecap: unset; stroke-linejoin: unset; stroke-miterlimit: unset; stroke-opacity: unset; stroke-width: unset; tab-size: unset; table-layout: unset; text-align: unset; text-align-last: unset; text-anchor: unset; text-box: unset; text-combine-upright: unset; text-decoration: unset; text-decoration-skip-ink: unset; text-emphasis: unset; text-emphasis-position: unset; text-indent: unset; text-overflow: unset; text-shadow: unset; text-transform: unset; text-underline-offset: unset; text-underline-position: unset; text-wrap: unset; timeline-scope: unset; top: 0px; touch-action: unset; transform: unset; transform-box: unset; transform-origin: unset; transform-style: unset; transition: unset; translate: unset; user-select: unset; vector-effect: unset; vertical-align: unset; view-timeline: unset; view-transition-class: unset; view-transition-name: unset; visibility: unset; border-spacing: unset; -webkit-box-align: unset; -webkit-box-decoration-break: unset; -webkit-box-direction: unset; -webkit-box-flex: unset; -webkit-box-ordinal-group: unset; -webkit-box-orient: unset; -webkit-box-pack: unset; -webkit-box-reflect: unset; -webkit-line-break: unset; -webkit-line-clamp: unset; -webkit-mask-box-image: unset; -webkit-rtl-ordering: unset; -webkit-ruby-position: unset; -webkit-tap-highlight-color: unset; -webkit-text-combine: unset; -webkit-text-decorations-in-effect: unset; -webkit-text-fill-color: unset; -webkit-text-security: unset; -webkit-text-stroke: unset; -webkit-user-drag: unset; white-space-collapse: unset; widows: unset; width: unset; will-change: unset; word-break: unset; word-spacing: unset; x: unset; y: unset; z-index: unset;"></div></div></body></html>
