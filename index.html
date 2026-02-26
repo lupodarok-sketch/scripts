@@ -3319,26 +3319,29 @@
         }
 
 
-        function exportToFile() {
-            // Get current HTML
-            const htmlDoc = document.documentElement.cloneNode(true);
-            
-            // Find script tag and replace data
-            const scripts = htmlDoc.getElementsByTagName('script');
-            for (let script of scripts) {
-                if (script.textContent.includes('const scriptsData =')) {
-                    // Сохраняем scriptsData
-                    const newScript = 'const scriptsData = ' + JSON.stringify(scriptsData, null, 8) + ';';
-                    script.textContent = script.textContent.replace(/const scriptsData = \{[\s\S]*?\};/, newScript);
-                    // Сохраняем manualFavorites — вшиваем прямо в файл
-                    const newFavScript = 'let manualFavorites = ' + JSON.stringify(manualFavorites) + '; // EMBEDDED_FAVORITES — данные вшиты при экспорте';
-                    script.textContent = script.textContent.replace(/let manualFavorites = \[.*?\]; \/\/ EMBEDDED_FAVORITES[^\n]*/, newFavScript);
-                    break;
-                }
+        async function exportToFile() {
+            // Получаем чистый исходный HTML через fetch (без браузерного мусора)
+            let htmlContent;
+            try {
+                const response = await fetch(location.href);
+                htmlContent = await response.text();
+            } catch(e) {
+                // Fallback на outerHTML если fetch не работает (например file://)
+                const htmlDoc = document.documentElement.cloneNode(true);
+                htmlContent = '<!DOCTYPE html>\n' + htmlDoc.outerHTML;
+                htmlContent = htmlContent.replace(/<div style="color-scheme: unset;[\s\S]*?<\/div><\/div><\/body>/, '</body>');
+                htmlContent = htmlContent.replace(/<div style="color-scheme: unset;[\s\S]*$/, '</body></html>');
             }
-            
-            // Create blob and download
-            const htmlContent = '<!DOCTYPE html>\n' + htmlDoc.outerHTML;
+
+            // Вшиваем актуальные scriptsData
+            const newScript = 'const scriptsData = ' + JSON.stringify(scriptsData, null, 8) + ';';
+            htmlContent = htmlContent.replace(/const scriptsData = \{[\s\S]*?\};/, newScript);
+
+            // Вшиваем manualFavorites
+            const newFavScript = 'let manualFavorites = ' + JSON.stringify(manualFavorites) + '; // EMBEDDED_FAVORITES — данные вшиты при экспорте';
+            htmlContent = htmlContent.replace(/let manualFavorites = \[.*?\]; \/\/ EMBEDDED_FAVORITES[^\n]*/, newFavScript);
+
+            // Скачиваем
             const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
@@ -3348,7 +3351,7 @@
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
-            
+
             alert('Файл сохранён!\n\nВсе изменения в скачанном файле.');
         }
 
