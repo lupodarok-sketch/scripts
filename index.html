@@ -149,9 +149,9 @@
         .content-header {
             background: #4169E1;
             color: white;
-            padding: 14px 16px;
+            padding: 14px 20px 14px 16px;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
             height: 52px;
             box-sizing: border-box;
@@ -160,11 +160,12 @@
         .content-title {
             font-size: 16px;
             font-weight: 600;
-            flex: 1;
             min-width: 0;
             text-align: left;
             margin-left: 16px;
-            margin-right: 20px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .header-buttons {
@@ -173,8 +174,24 @@
             gap: 4px;
             flex-wrap: nowrap !important;
             flex-shrink: 0;
+            margin-left: 8px;
         }
 
+
+        .header-version {
+            font-size: 14px;
+            font-weight: 400;
+            color: white;
+            margin-left: auto;
+            cursor: pointer;
+            white-space: nowrap;
+            flex-shrink: 0;
+            margin-right: 10px;
+        }
+
+        .header-version:hover {
+            color: rgba(255,255,255,0.8);
+        }
 
         .header-btn-wide {
             min-width: 32px !important;
@@ -244,7 +261,7 @@
 
         .scripts-container {
             flex: 1;
-            overflow-y: auto;
+            overflow-y: scroll;
             padding: 16px 20px 40px 20px;
         
             padding-bottom: 87.5px;
@@ -1021,10 +1038,8 @@
                 overflow: hidden;
                 text-overflow: ellipsis;
                 text-align: left;
-                flex: 1;
                 min-width: 0;
-                margin-left: 12px;
-                margin-right: 12px;
+                margin-left: 16px;
             }
 
             .header-buttons {
@@ -1156,7 +1171,7 @@
                 <h1>ЛУЧШИЙ ПОДАРОК</h1>
             </div>
             <div class="menu-list" id="menuList">
-                    <div class="menu-item active" onclick="showCategory('⭐ Избранное')" draggable="false">
+                    <div class="menu-item active" onclick="showCategory('⭐ Избранное')">
                         <div>
                             <span class="menu-item-text">⭐ Избранное</span>
                             
@@ -1169,7 +1184,7 @@
                         </div>
                     </div>
                 
-                    <div class="menu-item" onclick="if(!editMode) showCategory('🟢 Приветствие')" draggable="false">
+                    <div class="menu-item" onclick="if(!editMode) showCategory('🟢 Приветствие')">
                         <div>
                             <span class="menu-item-text">🟢 Приветствие</span>
                             
@@ -1182,7 +1197,7 @@
                         </div>
                     </div>
                 
-                    <div class="menu-item" onclick="if(!editMode) showCategory('🟢 Решение')" draggable="false">
+                    <div class="menu-item" onclick="if(!editMode) showCategory('🟢 Решение')">
                         <div>
                             <span class="menu-item-text">🟢 Решение</span>
                             
@@ -1195,7 +1210,7 @@
                         </div>
                     </div>
                 
-                    <div class="menu-item" onclick="if(!editMode) showCategory('🟢 Анкета')" draggable="false">
+                    <div class="menu-item" onclick="if(!editMode) showCategory('🟢 Анкета')">
                         <div>
                             <span class="menu-item-text">🟢 Анкета</span>
                             
@@ -1208,7 +1223,7 @@
                         </div>
                     </div>
                 
-                    <div class="menu-item" onclick="if(!editMode) showCategory('🟡 Оплата (Описание)')" draggable="false">
+                    <div class="menu-item" onclick="if(!editMode) showCategory('🟡 Оплата (Описание)')">
                         <div>
                             <span class="menu-item-text">🟡 Оплата (Описание)</span>
                             
@@ -1221,7 +1236,7 @@
                         </div>
                     </div>
                 
-                    <div class="menu-item" onclick="if(!editMode) showCategory('🟡 Оплата (Предложение)')" draggable="false">
+                    <div class="menu-item" onclick="if(!editMode) showCategory('🟡 Оплата (Предложение)')">
                         <div>
                             <span class="menu-item-text">🟡 Оплата (Предложение)</span>
                             
@@ -1234,7 +1249,7 @@
                         </div>
                     </div>
                 
-                    <div class="menu-item" onclick="if(!editMode) showCategory('🟠 Приёмка Текст')" draggable="false">
+                    <div class="menu-item" onclick="if(!editMode) showCategory('🟠 Приёмка Текст')">
                         <div>
                             <span class="menu-item-text">🟠 Приёмка Текст</span>
                             
@@ -1247,7 +1262,7 @@
                         </div>
                     </div>
                 
-                    <div class="menu-item" onclick="if(!editMode) showCategory('🟠 Приёмка Медиа')" draggable="false">
+                    <div class="menu-item" onclick="if(!editMode) showCategory('🟠 Приёмка Медиа')">
                         <div>
                             <span class="menu-item-text">🟠 Приёмка Медиа</span>
                             
@@ -1260,7 +1275,7 @@
                         </div>
                     </div>
                 
-                    <div class="menu-item" onclick="if(!editMode) showCategory('🟠 Приёмка Разное')" draggable="false">
+                    <div class="menu-item" onclick="if(!editMode) showCategory('🟠 Приёмка Разное')">
                         <div>
                             <span class="menu-item-text">🟠 Приёмка Разное</span>
                             
@@ -1273,7 +1288,7 @@
                         </div>
                     </div>
                 
-                    <div class="menu-item" onclick="if(!editMode) showCategory('🔵 Описание Песня')" draggable="false">
+                    <div class="menu-item" onclick="if(!editMode) showCategory('🔵 Описание Песня')">
                         <div>
                             <span class="menu-item-text">🔵 Описание Песня</span>
                             
@@ -1286,7 +1301,7 @@
                         </div>
                     </div>
                 
-                    <div class="menu-item" onclick="if(!editMode) showCategory('🔵 Описание Гендер')" draggable="false">
+                    <div class="menu-item" onclick="if(!editMode) showCategory('🔵 Описание Гендер')">
                         <div>
                             <span class="menu-item-text">🔵 Описание Гендер</span>
                             
@@ -1299,7 +1314,7 @@
                         </div>
                     </div>
                 
-                    <div class="menu-item" onclick="if(!editMode) showCategory('🔵 Описание Стих / Проза')" draggable="false">
+                    <div class="menu-item" onclick="if(!editMode) showCategory('🔵 Описание Стих / Проза')">
                         <div>
                             <span class="menu-item-text">🔵 Описание Стих / Проза</span>
                             
@@ -1312,7 +1327,7 @@
                         </div>
                     </div>
                 
-                    <div class="menu-item" onclick="if(!editMode) showCategory('🔵 Описание Фото / Видео')" draggable="false">
+                    <div class="menu-item" onclick="if(!editMode) showCategory('🔵 Описание Фото / Видео')">
                         <div>
                             <span class="menu-item-text">🔵 Описание Фото / Видео</span>
                             
@@ -1325,7 +1340,7 @@
                         </div>
                     </div>
                 
-                    <div class="menu-item" onclick="if(!editMode) showCategory('🔴 Расчёты')" draggable="false">
+                    <div class="menu-item" onclick="if(!editMode) showCategory('🔴 Расчёты')">
                         <div>
                             <span class="menu-item-text">🔴 Расчёты</span>
                             
@@ -1338,7 +1353,7 @@
                         </div>
                     </div>
                 
-                    <div class="menu-item" onclick="if(!editMode) showCategory('🔴 Отзыв')" draggable="false">
+                    <div class="menu-item" onclick="if(!editMode) showCategory('🔴 Отзыв')">
                         <div>
                             <span class="menu-item-text">🔴 Отзыв</span>
                             
@@ -1351,7 +1366,7 @@
                         </div>
                     </div>
                 
-                    <div class="menu-item" onclick="if(!editMode) showCategory('🔴 Авторы, Crm, Другое')" draggable="false">
+                    <div class="menu-item" onclick="if(!editMode) showCategory('🔴 Авторы, Crm, Другое')">
                         <div>
                             <span class="menu-item-text">🔴 Авторы, Crm, Другое</span>
                             
@@ -1371,13 +1386,14 @@
         <div class="main-content">
             <div class="content-header">
                 <button class="menu-toggle" id="menuToggle">☰</button>
-                <div class="content-title" id="contentTitle">⭐ Избранное</div>
                 <div class="header-buttons">
                     <button class="header-btn header-btn-wide" id="favoriteBtn" title="Избранное" onclick="showCategory('⭐ Избранное')" style="display: block;">⭐</button>
                     <button class="header-btn header-btn-wide" id="expandAllBtn" onclick="expandAll()" title="Развернуть всё" style="display: block;">▲</button>
                     <button class="header-btn header-btn-wide" id="collapseAllBtn" onclick="collapseAll()" title="Свернуть всё" style="display: block;">▼</button>
                     
                 </div>
+                <div class="content-title" id="contentTitle">⭐ Избранное</div>
+                <div class="header-version" id="headerVersion" onclick="changeVersion()" title="Версия (нажмите чтобы изменить)">v260226_1</div>
             </div>
 
             <div class="search-box">
@@ -3352,6 +3368,15 @@
 
             alert('Файл сохранён!\n\nВсе изменения в скачанном файле.');
         }
+        function changeVersion() {
+            const el = document.getElementById('headerVersion');
+            const current = el.textContent;
+            const newVer = prompt('Введите версию:', current);
+            if (newVer && newVer.trim()) {
+                el.textContent = newVer.trim();
+            }
+        }
+
         function resetToOriginal() {
             if (confirm('Сбросить все изменения / Обновить?')) {
                 localStorage.removeItem('scriptsData');
