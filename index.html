@@ -448,6 +448,7 @@
             display: inline-block;
             cursor: pointer;
             user-select: none;
+            text-align: left;
         }
         
         .script-label:not([style*="background: #4169E1"]):hover {
@@ -469,7 +470,7 @@
             color: #333;
             white-space: pre-wrap;
             word-wrap: break-word;
-            
+            text-align: left;
         }
 
         .script-text.collapsed {
@@ -4701,7 +4702,7 @@ max.ru/id744500047055_bot</div>
                     undoBtn.className = 'header-btn';
                     undoBtn.id = 'undoBtn';
                     undoBtn.title = 'Отменить';
-                    undoBtn.innerHTML = 'U';
+                    undoBtn.innerHTML = '↩️';
                     undoBtn.style.fontSize = '16px';
                     undoBtn.style.display = 'flex';
                     undoBtn.style.alignItems = 'center';
@@ -4715,24 +4716,13 @@ max.ru/id744500047055_bot</div>
                     redoBtn.className = 'header-btn';
                     redoBtn.id = 'redoBtn';
                     redoBtn.title = 'Вернуть';
-                    redoBtn.innerHTML = 'R';
+                    redoBtn.innerHTML = '↪️';
                     redoBtn.style.fontSize = '16px';
                     redoBtn.style.display = 'flex';
                     redoBtn.style.alignItems = 'center';
                     redoBtn.style.justifyContent = 'center';
                     redoBtn.onclick = redo;
                     document.querySelector('.header-buttons').appendChild(redoBtn);
-                }
-                
-                if (!document.getElementById('resetBtn')) {
-                    const resetBtn = document.createElement('button');
-                    resetBtn.className = 'header-btn';
-                    resetBtn.id = 'resetBtn';
-                    resetBtn.title = 'Сброс';
-                    resetBtn.innerHTML = '🔄';
-                    resetBtn.style.fontSize = '18px';
-                    resetBtn.onclick = resetToOriginal;
-                    document.querySelector('.header-buttons').appendChild(resetBtn);
                 }
             } else {
                 // Показать кнопки Избранное и Свернуть
@@ -4747,11 +4737,9 @@ max.ru/id744500047055_bot</div>
                 // Удалить кнопки undo, redo, reset
                 const undoBtn = document.getElementById('undoBtn');
                 const redoBtn = document.getElementById('redoBtn');
-                const resetBtn = document.getElementById('resetBtn');
                 
                 if (undoBtn) undoBtn.remove();
                 if (redoBtn) redoBtn.remove();
-                if (resetBtn) resetBtn.remove();
             }
             
     
@@ -6219,6 +6207,7 @@ function clearSearchField() {
 
     <!-- Плавающие кнопки -->
     <div class="floating-buttons">
+        <button class="floating-btn" onclick="resetToOriginal()" id="resetBtn" title="Сброс к оригиналу" style="display: block; font-size: 20px;">🔄</button>
         <button class="floating-btn" id="editModeToggle" onclick="toggleEditMode()" title="Редактировать" style="display: block;">✏️</button>
         <button class="floating-btn" onclick="exportToFile()" id="exportBtn" title="Экспорт" style="display: block;">💾</button>
     </div>
