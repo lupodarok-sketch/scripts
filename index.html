@@ -3595,16 +3595,17 @@
             showCategory(category);
             if (subsection) {
                 setTimeout(() => {
-                    // Найти заголовок подтемы и проскроллить к нему
                     const headers = document.querySelectorAll('.subsection-header');
                     for (const header of headers) {
                         if (header.querySelector('span') && header.querySelector('span').textContent.trim() === subsection) {
-                            // Раскрыть подтему если свёрнута
                             if (header.classList.contains('collapsed')) {
                                 header.click();
                             }
                             setTimeout(() => {
-                                header.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                const container = document.getElementById('scriptsContainer');
+                                const containerTop = container.getBoundingClientRect().top;
+                                const headerTop = header.getBoundingClientRect().top;
+                                container.scrollTop += (headerTop - containerTop) - 8;
                             }, 100);
                             break;
                         }
