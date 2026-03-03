@@ -426,6 +426,15 @@
             box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.5);
         }
 
+        .script-divider.moving-highlight::before,
+        .subsection-divider.moving-highlight::before {
+            background: #ffc107;
+            color: #c47000;
+            border-radius: 8px;
+            padding: 2px 10px 2px 14px;
+            box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.5);
+        }
+
         .script-item.hidden {
             display: none;
         }
@@ -551,7 +560,7 @@
         .add-category-btn {
             width: 100%;
             padding: 10px;
-            
+            height: 44px;
             background: #4169E1;
             color: white;
             border: none;
@@ -570,7 +579,7 @@
         .add-category-btn {
             width: 100%;
             padding: 10px;
-            
+            height: 44px;
             background: #4169E1;
             color: white;
             border: none;
@@ -588,12 +597,12 @@
         .add-script-btn {
             width: 100%;
             padding: 10px;
-            
+            height: 44px;
             background: #28a745;
             color: white;
             border: none;
             border-radius: 6px;
-            font-size: 14px;
+            font-size: 13px;
             cursor: pointer;
             transition: background 0.2s;
         }
@@ -1099,6 +1108,7 @@
         }
     
         /* Разделитель — всегда одинаковый, чисто визуальная линия */
+
         .script-divider,
         .subsection-divider {
             height: auto;
@@ -1112,6 +1122,10 @@
             overflow: visible;
             color: #aaa;
             letter-spacing: 4px;
+            padding-left: 4px;
+        }
+        body.edit-mode .script-divider {
+            margin-bottom: 0;
         }
         .script-divider::before,
         .subsection-divider::before {
@@ -1130,6 +1144,11 @@
             align-items: center;
             margin: -4px 0 6px 0;
             padding: 0 16px 0 0;
+        }
+
+        body.edit-mode .script-divider + .divider-btn-row {
+            margin-top: 0;
+            margin-bottom: 5px;
         }
         
         .divider-btn-row .subsection-action-btn {
@@ -1153,10 +1172,10 @@
     <div class="app-container">
         <div class="sidebar" id="sidebar">
             <div class="sidebar-header">
-                <h1>ЛУЧШИЙ ПОДАРОК</h1>
+                <h1 onclick="collapseAll(); showCategory('⭐ Избранное');" title="Свернуть всё и перейти в Избранное" style="cursor:pointer; user-select:none;">ЛУЧШИЙ ПОДАРОК</h1>
             </div>
             <div class="menu-list" id="menuList">
-                    <div class="menu-item" onclick="showCategory('⭐ Избранное')">
+                    <div class="menu-item " onclick="showCategory('⭐ Избранное')" draggable="false">
                         <div>
                             <span class="menu-item-text">⭐ Избранное</span>
                             
@@ -1169,7 +1188,7 @@
                         </div>
                     </div>
                 
-                    <div class="menu-item" onclick="if(!editMode) showCategory('🟢 Приветствие')">
+                    <div class="menu-item " onclick="if(!editMode) showCategory('🟢 Приветствие')" draggable="false">
                         <div>
                             <span class="menu-item-text">🟢 Приветствие</span>
                             
@@ -1182,7 +1201,7 @@
                         </div>
                     </div>
                 
-                    <div class="menu-item" onclick="if(!editMode) showCategory('🟢 Решение')">
+                    <div class="menu-item " onclick="if(!editMode) showCategory('🟢 Решение')" draggable="false">
                         <div>
                             <span class="menu-item-text">🟢 Решение</span>
                             
@@ -1195,7 +1214,7 @@
                         </div>
                     </div>
                 
-                    <div class="menu-item" onclick="if(!editMode) showCategory('🟢 Анкета')">
+                    <div class="menu-item " onclick="if(!editMode) showCategory('🟢 Анкета')" draggable="false">
                         <div>
                             <span class="menu-item-text">🟢 Анкета</span>
                             
@@ -1208,7 +1227,7 @@
                         </div>
                     </div>
                 
-                    <div class="menu-item" onclick="if(!editMode) showCategory('🟡 Оплата (Описание)')">
+                    <div class="menu-item " onclick="if(!editMode) showCategory('🟡 Оплата (Описание)')" draggable="false">
                         <div>
                             <span class="menu-item-text">🟡 Оплата (Описание)</span>
                             
@@ -1221,7 +1240,7 @@
                         </div>
                     </div>
                 
-                    <div class="menu-item" onclick="if(!editMode) showCategory('🟡 Оплата (Процесс)')">
+                    <div class="menu-item " onclick="if(!editMode) showCategory('🟡 Оплата (Процесс)')" draggable="false">
                         <div>
                             <span class="menu-item-text">🟡 Оплата (Процесс)</span>
                             
@@ -1234,7 +1253,7 @@
                         </div>
                     </div>
                 
-                    <div class="menu-item active" onclick="if(!editMode) showCategory('🟠 Приёмка Текст')">
+                    <div class="menu-item " onclick="if(!editMode) showCategory('🟠 Приёмка Текст')" draggable="false">
                         <div>
                             <span class="menu-item-text">🟠 Приёмка Текст</span>
                             
@@ -1247,7 +1266,7 @@
                         </div>
                     </div>
                 
-                    <div class="menu-item" onclick="if(!editMode) showCategory('🟠 Приёмка Медиа')">
+                    <div class="menu-item " onclick="if(!editMode) showCategory('🟠 Приёмка Медиа')" draggable="false">
                         <div>
                             <span class="menu-item-text">🟠 Приёмка Медиа</span>
                             
@@ -1260,7 +1279,7 @@
                         </div>
                     </div>
                 
-                    <div class="menu-item" onclick="if(!editMode) showCategory('🟠 Приёмка Разное')">
+                    <div class="menu-item " onclick="if(!editMode) showCategory('🟠 Приёмка Разное')" draggable="false">
                         <div>
                             <span class="menu-item-text">🟠 Приёмка Разное</span>
                             
@@ -1273,7 +1292,7 @@
                         </div>
                     </div>
                 
-                    <div class="menu-item" onclick="if(!editMode) showCategory('🔵 Описание Песня')">
+                    <div class="menu-item " onclick="if(!editMode) showCategory('🔵 Описание Песня')" draggable="false">
                         <div>
                             <span class="menu-item-text">🔵 Описание Песня</span>
                             
@@ -1286,7 +1305,7 @@
                         </div>
                     </div>
                 
-                    <div class="menu-item" onclick="if(!editMode) showCategory('🔵 Описание Гендер')">
+                    <div class="menu-item " onclick="if(!editMode) showCategory('🔵 Описание Гендер')" draggable="false">
                         <div>
                             <span class="menu-item-text">🔵 Описание Гендер</span>
                             
@@ -1299,7 +1318,7 @@
                         </div>
                     </div>
                 
-                    <div class="menu-item" onclick="if(!editMode) showCategory('🔵 Описание Стих / Проза')">
+                    <div class="menu-item " onclick="if(!editMode) showCategory('🔵 Описание Стих / Проза')" draggable="false">
                         <div>
                             <span class="menu-item-text">🔵 Описание Стих / Проза</span>
                             
@@ -1312,7 +1331,7 @@
                         </div>
                     </div>
                 
-                    <div class="menu-item" onclick="if(!editMode) showCategory('🔵 Описание Фото / Видео')">
+                    <div class="menu-item " onclick="if(!editMode) showCategory('🔵 Описание Фото / Видео')" draggable="false">
                         <div>
                             <span class="menu-item-text">🔵 Описание Фото / Видео</span>
                             
@@ -1325,7 +1344,7 @@
                         </div>
                     </div>
                 
-                    <div class="menu-item" onclick="if(!editMode) showCategory('🔴 Расчёты')">
+                    <div class="menu-item " onclick="if(!editMode) showCategory('🔴 Расчёты')" draggable="false">
                         <div>
                             <span class="menu-item-text">🔴 Расчёты</span>
                             
@@ -1338,7 +1357,7 @@
                         </div>
                     </div>
                 
-                    <div class="menu-item" onclick="if(!editMode) showCategory('🔴 Отзыв')">
+                    <div class="menu-item " onclick="if(!editMode) showCategory('🔴 Отзыв')" draggable="false">
                         <div>
                             <span class="menu-item-text">🔴 Отзыв</span>
                             
@@ -1351,7 +1370,7 @@
                         </div>
                     </div>
                 
-                    <div class="menu-item" onclick="if(!editMode) showCategory('🔴 Авторы, Crm, Другое')">
+                    <div class="menu-item " onclick="if(!editMode) showCategory('🔴 Авторы, Crm, Другое')" draggable="false">
                         <div>
                             <span class="menu-item-text">🔴 Авторы, Crm, Другое</span>
                             
@@ -2123,7 +2142,7 @@ _ руб.</div>
                         </div>
                     
                     <div class="subsection ">
-                        <div class="subsection-header collapsed" onclick="if(!editMode) toggleSubsection(this)">
+                        <div class="subsection-header " onclick="if(!editMode) toggleSubsection(this)">
                             <span>Принято - Текст (Песня / Аудио)</span>
                             <div class="subsection-actions">
                                 <button class="subsection-action-btn" onclick="editSubsection('Принято - Текст (Песня / Аудио)')">✏️</button>
@@ -2135,15 +2154,15 @@ _ руб.</div>
                             </div>
                             <span class="arrow">▼</span>
                         </div>
-                        <div class="subsection-scripts collapsed">
+                        <div class="subsection-scripts ">
                 
-                        <div class="script-item " onclick="if(false) copyText(this, 'Тогда принимаемся за аудио-часть, сегодня в течение дня будет готова. Пришлём вам сначала ряд демо-версий на выбор.')" data-search="🟠 приемка текст принято - текст (песня / аудио) сегодня тогда принимаемся за аудио-часть, сегодня в течение дня будет готова. пришлем вам сначала ряд демо-версий на выбор." data-category="🟠 Приёмка Текст" data-subsection="Принято - Текст (Песня / Аудио)" data-index="0">
+                        <div class="script-item " onclick="if(false) copyText(this, 'Тогда принимаемся за аудио-часть, сегодня в течение дня будет готово. Пришлём вам сначала ряд демо-версий на выбор.')" data-search="🟠 приемка текст принято - текст (песня / аудио) сегодня тогда принимаемся за аудио-часть, сегодня в течение дня будет готово. пришлем вам сначала ряд демо-версий на выбор." data-category="🟠 Приёмка Текст" data-subsection="Принято - Текст (Песня / Аудио)" data-index="0">
                             
                             <div class="script-label" onclick="event.stopPropagation(); toggleShowMore('script---------------------------------0')">Сегодня</div>
-                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Тогда принимаемся за аудио-часть, сегодня в течение дня будет готова. Пришлём вам сначала ряд демо-версий на выбор.')" title="Копировать"></div>
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Тогда принимаемся за аудио-часть, сегодня в течение дня будет готово. Пришлём вам сначала ряд демо-версий на выбор.')" title="Копировать"></div>
                             <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script---------------------------------0')" title="Показать всё"></div>
                             <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
-                            <div class="script-text collapsed" id="script---------------------------------0-text">Тогда принимаемся за аудио-часть, сегодня в течение дня будет готова. Пришлём вам сначала ряд демо-версий на выбор.</div>
+                            <div class="script-text collapsed" id="script---------------------------------0-text">Тогда принимаемся за аудио-часть, сегодня в течение дня будет готово. Пришлём вам сначала ряд демо-версий на выбор.</div>
                             
                             <div class="script-item-actions">
                                 
@@ -2156,13 +2175,13 @@ _ руб.</div>
                             </div>
                         </div>
                     
-                        <div class="script-item " onclick="if(false) copyText(this, 'Тогда принимаемся за аудио-часть, завтра в течение дня будет готова. Пришлём вам сначала ряд демо-версий на выбор.')" data-search="🟠 приемка текст принято - текст (песня / аудио) завтра тогда принимаемся за аудио-часть, завтра в течение дня будет готова. пришлем вам сначала ряд демо-версий на выбор." data-category="🟠 Приёмка Текст" data-subsection="Принято - Текст (Песня / Аудио)" data-index="1">
+                        <div class="script-item " onclick="if(false) copyText(this, 'Тогда принимаемся за аудио-часть, завтра в течение дня будет готово. Пришлём вам сначала ряд демо-версий на выбор.')" data-search="🟠 приемка текст принято - текст (песня / аудио) завтра тогда принимаемся за аудио-часть, завтра в течение дня будет готово. пришлем вам сначала ряд демо-версий на выбор." data-category="🟠 Приёмка Текст" data-subsection="Принято - Текст (Песня / Аудио)" data-index="1">
                             
                             <div class="script-label" onclick="event.stopPropagation(); toggleShowMore('script---------------------------------1')">Завтра</div>
-                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Тогда принимаемся за аудио-часть, завтра в течение дня будет готова. Пришлём вам сначала ряд демо-версий на выбор.')" title="Копировать"></div>
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Тогда принимаемся за аудио-часть, завтра в течение дня будет готово. Пришлём вам сначала ряд демо-версий на выбор.')" title="Копировать"></div>
                             <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script---------------------------------1')" title="Показать всё"></div>
                             <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
-                            <div class="script-text collapsed" id="script---------------------------------1-text">Тогда принимаемся за аудио-часть, завтра в течение дня будет готова. Пришлём вам сначала ряд демо-версий на выбор.</div>
+                            <div class="script-text collapsed" id="script---------------------------------1-text">Тогда принимаемся за аудио-часть, завтра в течение дня будет готово. Пришлём вам сначала ряд демо-версий на выбор.</div>
                             
                             <div class="script-item-actions">
                                 
@@ -2175,13 +2194,13 @@ _ руб.</div>
                             </div>
                         </div>
                     
-                        <div class="script-item " onclick="if(false) copyText(this, 'Тогда принимаемся за аудио-часть, в понедельник в течение дня будет готова. Пришлём вам сначала ряд демо-версий на выбор.')" data-search="🟠 приемка текст принято - текст (песня / аудио) понедельник тогда принимаемся за аудио-часть, в понедельник в течение дня будет готова. пришлем вам сначала ряд демо-версий на выбор." data-category="🟠 Приёмка Текст" data-subsection="Принято - Текст (Песня / Аудио)" data-index="2">
+                        <div class="script-item " onclick="if(false) copyText(this, 'Тогда принимаемся за аудио-часть, в понедельник в течение дня будет готово. Пришлём вам сначала ряд демо-версий на выбор.')" data-search="🟠 приемка текст принято - текст (песня / аудио) понедельник тогда принимаемся за аудио-часть, в понедельник в течение дня будет готово. пришлем вам сначала ряд демо-версий на выбор." data-category="🟠 Приёмка Текст" data-subsection="Принято - Текст (Песня / Аудио)" data-index="2">
                             
                             <div class="script-label" onclick="event.stopPropagation(); toggleShowMore('script---------------------------------2')">Понедельник</div>
-                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Тогда принимаемся за аудио-часть, в понедельник в течение дня будет готова. Пришлём вам сначала ряд демо-версий на выбор.')" title="Копировать"></div>
+                            <div class="click-zone-left" onclick="event.stopPropagation(); copyText(this.closest('.script-item'), 'Тогда принимаемся за аудио-часть, в понедельник в течение дня будет готово. Пришлём вам сначала ряд демо-версий на выбор.')" title="Копировать"></div>
                             <div class="click-zone-center" onclick="event.stopPropagation(); toggleShowMore('script---------------------------------2')" title="Показать всё"></div>
                             <div class="click-zone-right" onclick="event.stopPropagation(); editScript(this.closest('.script-item'))" title="Редактировать"></div>
-                            <div class="script-text collapsed" id="script---------------------------------2-text">Тогда принимаемся за аудио-часть, в понедельник в течение дня будет готова. Пришлём вам сначала ряд демо-версий на выбор.</div>
+                            <div class="script-text collapsed" id="script---------------------------------2-text">Тогда принимаемся за аудио-часть, в понедельник в течение дня будет готово. Пришлём вам сначала ряд демо-версий на выбор.</div>
                             
                             <div class="script-item-actions">
                                 
@@ -2875,6 +2894,7 @@ _ руб.</div>
                                 "content": "Вернее сегодня уже не успеем, завтра пришлём текст, хорошо?"
                         }
                 ],
+                "---SUBSECTION-DIVIDER-2---": [],
                 "Внесена - Перед Демо (Песня)": [
                         {
                                 "label": "Сегодня",
@@ -2913,6 +2933,7 @@ _ руб.</div>
                                 "content": "Спасибо! Работаем над видео, завтра будет готово. Пришлём вам сначала демо на согласование. Будем с вами на связи 👍"
                         }
                 ],
+                "---SUBSECTION-DIVIDER-t1772477204438---": [],
                 "Внесена - Перед Финальной": [
                         {
                                 "label": "Песня / Гендер",
@@ -2927,7 +2948,7 @@ _ руб.</div>
                                 "content": "Спасибо! Сейчас пришлю вам готовый полный текст."
                         }
                 ],
-                "---SUBSECTION-DIVIDER-2---": [],
+                "---SUBSECTION-DIVIDER-t1772477187891---": [],
                 "Не оплачивают": [
                         {
                                 "label": "Будете оплачивать?",
@@ -3082,15 +3103,15 @@ _ руб.</div>
                 "Принято - Текст (Песня / Аудио)": [
                         {
                                 "label": "Сегодня",
-                                "content": "Тогда принимаемся за аудио-часть, сегодня в течение дня будет готова. Пришлём вам сначала ряд демо-версий на выбор."
+                                "content": "Тогда принимаемся за аудио-часть, сегодня в течение дня будет готово. Пришлём вам сначала ряд демо-версий на выбор."
                         },
                         {
                                 "label": "Завтра",
-                                "content": "Тогда принимаемся за аудио-часть, завтра в течение дня будет готова. Пришлём вам сначала ряд демо-версий на выбор."
+                                "content": "Тогда принимаемся за аудио-часть, завтра в течение дня будет готово. Пришлём вам сначала ряд демо-версий на выбор."
                         },
                         {
                                 "label": "Понедельник",
-                                "content": "Тогда принимаемся за аудио-часть, в понедельник в течение дня будет готова. Пришлём вам сначала ряд демо-версий на выбор."
+                                "content": "Тогда принимаемся за аудио-часть, в понедельник в течение дня будет готово. Пришлём вам сначала ряд демо-версий на выбор."
                         },
                         {
                                 "label": "Сегодня (Песня - Свой голос)",
@@ -4278,6 +4299,7 @@ _ руб.</div>
             saveManualFavorites();
             rebuildFavoritesCategory();
             renderSubsections(scriptsData['⭐ Избранное']);
+            highlightMovedItem('⭐ Избранное', 'Избранные скрипты', idx - 1);
         }
         
         function moveFavoriteDown(idx) {
@@ -4286,6 +4308,7 @@ _ руб.</div>
             saveManualFavorites();
             rebuildFavoritesCategory();
             renderSubsections(scriptsData['⭐ Избранное']);
+            highlightMovedItem('⭐ Избранное', 'Избранные скрипты', idx + 1);
         }
         
         function rebuildFavoritesCategory() {
@@ -4443,7 +4466,7 @@ _ руб.</div>
                     const isDivider = item.type === 'divider';
                     if (isDivider) {
                         html += `
-                            <div class="subsection-divider"></div>
+                            <div class="subsection-divider" data-category="⭐ Избранное" data-subsection="Избранные скрипты" data-index="${idx}"></div>
                             <div class="divider-btn-row">
                                 <button class="subsection-action-btn placeholder" title="">✏️</button>
                                 <button class="subsection-action-btn" onclick="event.stopPropagation(); moveFavoriteUp(${idx})" ${idx === 0 ? 'disabled' : ''} title="Вверх">⬆</button>
@@ -4484,7 +4507,7 @@ _ руб.</div>
                 if (editMode) {
                     html += `
                         <div style="display: flex; gap: 10px; margin-top: 20px;">
-                            <button class="add-category-btn" onclick="addFavoriteDivider()" style="flex: 0.6; background: #6c757d;"><span style="color: white; font-weight: bold; margin-right: 6px;">—</span>Разделитель</button>
+                            <button class="add-category-btn" onclick="addFavoriteDivider()" style="flex: 1; background: #6c757d;"><span style="color: white; font-weight: bold; margin-right: 6px;">—</span>Разделитель</button>
                         </div>
                     `;
                 }
@@ -4524,19 +4547,30 @@ _ руб.</div>
                     const label = item.label || '';
                     const content = item.content;
                     
-                    // Разделители внутри подтем — скрываем (не нужны)
+                    // Разделители внутри подтем
                     if (label === '---' || content === '---DIVIDER---') {
+                        html += `
+                            <div class="script-divider"
+                                 data-category="${currentCategory}"
+                                 data-subsection="${subsectionName}"
+                                 data-index="${idx}">
+                            </div>
+                            ${editMode ? `<div class="divider-btn-row">
+                                <button class="subsection-action-btn" onclick="event.stopPropagation(); moveScriptUp(this.closest('.divider-btn-row').previousElementSibling)" ${idx === 0 ? 'disabled' : ''} title="Вверх">⬆</button>
+                                <button class="subsection-action-btn" onclick="event.stopPropagation(); moveScriptDown(this.closest('.divider-btn-row').previousElementSibling)" ${idx === scripts.length - 1 ? 'disabled' : ''} title="Вниз">⬇</button>
+                                <button class="subsection-action-btn" onclick="event.stopPropagation(); deleteScript(this.closest('.divider-btn-row').previousElementSibling)" title="Удалить">🗑️</button>
+                            </div>` : ''}
+                        `;
                         return;
                     }
                     
                     // Виджет мессенджеров
                     if (content === '---MESSENGER-WIDGET---') {
                         html += `
-                        <div style="display:flex; align-items:center; gap:10px; padding:10px 4px 0; flex-wrap:wrap; margin-bottom:8px;">
-                            <input type="text" id="wa-widget-phone" placeholder="Контакт" style="padding:7px 10px; font-size:14px; border-radius:6px; border:1px solid #ccc; width:240px; box-sizing:border-box; outline:none;" onkeydown="if(event.key==='Enter'){let p=this.value.replace(/[^0-9]/g,'');if(p.startsWith('8'))p='7'+p.slice(1);if(p)window.open('https://wa.me/'+p,'_blank');}"> 
-                            <svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 24 24' fill='#25D366' style="flex-shrink:0;cursor:pointer;" onclick="(function(){let p=document.getElementById('wa-widget-phone').value.replace(/[^0-9]/g,'');if(p.startsWith('8'))p='7'+p.slice(1);if(p)window.open('https://wa.me/'+p,'_blank');else alert('Введите номер телефона');})()" title="Открыть WhatsApp"><path d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z'/></svg>
-                            <input type="text" id="tg-widget-phone" placeholder="Контакт" style="padding:7px 10px; font-size:14px; border-radius:6px; border:1px solid #ccc; width:240px; box-sizing:border-box; outline:none;" onkeydown="if(event.key==='Enter'){let v=this.value.trim();if(!v)return;let url=/[a-zA-Z]/.test(v)?'https://t.me/'+v.replace('@',''):'https://t.me/+'+v.replace(/[^0-9]/g,'');window.open(url,'_blank');}"> 
-                            <svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 24 24' fill='#2AABEE' style="flex-shrink:0;cursor:pointer;" onclick="(function(){let v=document.getElementById('tg-widget-phone').value.trim();if(!v){alert('Введите контакт');return;}let url=/[a-zA-Zа-яА-Я]/.test(v)?'https://t.me/'+v.replace('@',''):'https://t.me/+'+v.replace(/[^0-9]/g,'');window.open(url,'_blank');})()" title="Открыть Telegram"><path d='M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z'/></svg>
+                        <div style="display:flex; align-items:center; gap:8px; padding:10px 4px 0; flex-wrap:nowrap; margin-bottom:8px;">
+                            <input type="text" id="messenger-widget-contact" placeholder="Контакт" style="padding:7px 10px; font-size:14px; border-radius:6px; border:1px solid #ccc; width:200px; min-width:120px; box-sizing:border-box; outline:none;" onkeydown="if(event.key==='Enter'){let v=document.getElementById('messenger-widget-contact').value.trim();if(!v)return;let p=v.replace(/[^0-9]/g,'');if(p.startsWith('8'))p='7'+p.slice(1);if(p)window.open('https://wa.me/'+p,'_blank');}"> 
+                            <svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 24 24' fill='#25D366' style="flex-shrink:0;cursor:pointer;" onclick="(function(){let v=document.getElementById('messenger-widget-contact').value.trim();if(!v){alert('Введите номер телефона');return;}let p=v.replace(/[^0-9]/g,'');if(p.startsWith('8'))p='7'+p.slice(1);if(p)window.open('https://wa.me/'+p,'_blank');else alert('Введите номер телефона');})()" title="Открыть WhatsApp"><path d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z'/></svg>
+                            <svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 24 24' fill='#2AABEE' style="flex-shrink:0;cursor:pointer;" onclick="(function(){let v=document.getElementById('messenger-widget-contact').value.trim();if(!v){alert('Введите контакт');return;}let p=v.replace(/[^0-9]/g,'');if(p.startsWith('8'))p='7'+p.slice(1);let url=/[a-zA-Zа-яА-Я]/.test(v)?'https://t.me/'+v.replace('@',''):'https://t.me/+'+p;window.open(url,'_blank');})()" title="Открыть Telegram"><path d='M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z'/></svg>
                         </div>
                         `;
                         return;
@@ -4577,6 +4611,7 @@ _ руб.</div>
                     html += `
                         <div style="display: flex; gap: 10px; margin-top: 10px; margin-bottom: 10px;">
                             <button class="add-script-btn" onclick="addScript('${subsectionName.replace(/'/g, "\\'")}')" style="font-weight: 500; flex: 1;"><span style="color: white; font-weight: bold; margin-right: 6px;">+</span>Добавить скрипт</button>
+                            <button class="add-script-btn" onclick="addDivider('${subsectionName.replace(/'/g, "\\\'")}')" style="font-weight: 500; flex: 1; background: #6c757d;"><span style="color: white; font-weight: bold; margin-right: 6px;">—</span>Разделитель</button>
                         </div>
                     `;
                 }
@@ -4634,7 +4669,7 @@ _ руб.</div>
                 html += `
                     <div style="display: flex; gap: 10px; margin-top: 20px;">
                         <button class="add-category-btn" onclick="addSubsection()" style="flex: 1;"><span style="color: white; font-weight: bold; margin-right: 6px;">+</span>Добавить подтему</button>
-                        <button class="add-category-btn" onclick="addSubsectionDivider()" style="flex: 0.6; background: #6c757d;"><span style="color: white; font-weight: bold; margin-right: 6px;">—</span>Разделитель</button>
+                        <button class="add-category-btn" onclick="addSubsectionDivider()" style="flex: 1; background: #6c757d;"><span style="color: white; font-weight: bold; margin-right: 6px;">—</span>Разделитель</button>
                     </div>
                 `;
             }
@@ -4647,7 +4682,8 @@ _ руб.</div>
         function collapseAll() {
             document.querySelectorAll('.subsection-header').forEach(h => h.classList.add('collapsed'));
             document.querySelectorAll('.subsection-scripts').forEach(s => s.classList.add('collapsed'));
-            if (subsectionStates[currentCategory]) subsectionStates[currentCategory] = {};
+            // Сбросить состояние всех категорий, чтобы при возврате не раскрывались
+            subsectionStates = {};
         }
 
 
@@ -4743,7 +4779,7 @@ _ руб.</div>
         }
         function highlightMovedItem(category, subsection, index) {
             setTimeout(() => {
-                const items = document.querySelectorAll(`.script-item[data-category="${CSS.escape(category)}"][data-subsection="${CSS.escape(subsection)}"][data-index="${index}"]`);
+                const items = document.querySelectorAll(`.script-item[data-category="${CSS.escape(category)}"][data-subsection="${CSS.escape(subsection)}"][data-index="${index}"], .script-divider[data-category="${CSS.escape(category)}"][data-subsection="${CSS.escape(subsection)}"][data-index="${index}"], .subsection-divider[data-category="${CSS.escape(category)}"][data-subsection="${CSS.escape(subsection)}"][data-index="${index}"]`);
                 items.forEach(item => {
                     item.classList.add('moving-highlight');
                     item.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
@@ -5235,6 +5271,14 @@ _ руб.</div>
             scriptsData[currentCategory] = newData;
             saveToLocalStorage();
             showCategory(currentCategory);
+            setTimeout(() => {
+                const dividers = document.querySelectorAll(`.subsection-divider[data-subsection-index="${index - 1}"]`);
+                dividers.forEach(d => {
+                    d.classList.add('moving-highlight');
+                    d.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                    setTimeout(() => d.classList.remove('moving-highlight'), 1500);
+                });
+            }, 50);
         }
         
         function moveSubsectionDividerDown(index) {
@@ -5255,6 +5299,14 @@ _ руб.</div>
             scriptsData[currentCategory] = newData;
             saveToLocalStorage();
             showCategory(currentCategory);
+            setTimeout(() => {
+                const dividers = document.querySelectorAll(`.subsection-divider[data-subsection-index="${index + 1}"]`);
+                dividers.forEach(d => {
+                    d.classList.add('moving-highlight');
+                    d.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                    setTimeout(() => d.classList.remove('moving-highlight'), 1500);
+                });
+            }, 50);
         }
         
 function addSubsection() {
